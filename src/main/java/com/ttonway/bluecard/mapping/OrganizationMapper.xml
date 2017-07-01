@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttonway.bluecard.dao.OrganizationMapper">
+
+    <resultMap id="orgBean" type="com.ttonway.bluecard.pojo.Organization">
+        <id column="id" property="orgId"/>
+        <result column="area" property="area"/>
+        <result column="organization" property="orgName"/>
+    </resultMap>
+
+    <select id="queryOrgList" resultMap="orgBean" parameterType="java.util.HashMap">
+        select *
+        from sys_org
+        order by id asc
+        limit #{start,jdbcType=BIGINT},#{length,jdbcType=BIGINT}
+    </select>
+
+    <select id="queryOrgListCount" resultType="java.lang.Integer">
+        select count(id) cnt
+        from sys_org
+    </select>
+
+
+    <insert id="insertOrg" parameterType="com.ttonway.bluecard.pojo.Organization">
+        insert into sys_org
+        (area, organization)
+        values
+        (#{area,jdbcType=BIGINT}, #{orgName,jdbcType=VARCHAR})
+    </insert>
+
+    <delete id="deleteOrgs">
+        delete from sys_org
+        where id in
+        <foreach collection="array" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+</mapper>

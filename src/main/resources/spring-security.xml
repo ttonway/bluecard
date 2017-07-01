@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/security"
+             xmlns:beans="http://www.springframework.org/schema/beans"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://www.springframework.org/schema/beans
+                 http://www.springframework.org/schema/beans/spring-beans.xsd
+                 http://www.springframework.org/schema/security
+                 http://www.springframework.org/schema/security/spring-security.xsd">
+
+    <http security="none" pattern="/login"/>
+    <http security="none" pattern="/static/**"/>
+
+    <http use-expressions="true" auto-config="true">
+
+        <intercept-url pattern="/link/image/**" access="permitAll"/>
+        <intercept-url pattern="/link/page/**" access="permitAll"/>
+        <intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+
+        <form-login
+                login-page='/login'
+                login-processing-url="/j_spring_security_check"
+                authentication-failure-url="/login?error"
+                default-target-url="/index"
+                username-parameter="username"
+                password-parameter="password"/>
+        <logout
+                logout-url="/j_spring_security_logout"
+                logout-success-url="/login?logout"/>
+        <csrf disabled="true"/>
+    </http>
+
+    <authentication-manager>
+        <!-- <authentication-provider> -->
+        <!-- <user-service> -->
+        <!-- <user name="admin" password="123" authorities="ROLE_USER"/> -->
+        <!-- </user-service> -->
+        <!-- </authentication-provider> -->
+        <authentication-provider user-service-ref="userService">
+            <password-encoder ref="md5Encoder"/>
+        </authentication-provider>
+    </authentication-manager>
+
+    <beans:bean id="md5Encoder" class="com.ttonway.bluecard.util.MD5PasswordEncoder"/>
+
+    <beans:bean id="userService" class="com.ttonway.bluecard.auth.UserServiceImpl"/>
+
+</beans:beans>
