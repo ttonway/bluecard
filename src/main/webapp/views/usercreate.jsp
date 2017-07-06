@@ -84,10 +84,11 @@
                                                         area="${item.area}">${item.bankName}</option>
                                             </c:forEach>
                                         </select>
-                                        <select class="form-control" id="bank1" style="margin-bottom: 8px;">
+                                        <select class="form-control" id="bank1">
                                             <option value="" selected disabled>请选择一级支行</option>
                                         </select>
-                                        <select class="form-control" id="bank2" name="bankId">
+                                        <select class="form-control" id="bank2" name="bankId"
+                                                style="margin-top: 8px; display: none;">
                                             <option value="" selected disabled>请选择二级支行</option>
                                         </select>
                                     </div>
@@ -147,6 +148,11 @@
             bank1.append('<option>' + area + '</option>');
         });
         bank1.on('change', function () {
+            if (bank1.val()) {
+                bank2.show();
+            } else {
+                bank2.hide();
+            }
             var options = $('#bank-all option[area=' + bank1.val() + ']');
             bank2.find('option:enabled').remove();
             options.each(function () {

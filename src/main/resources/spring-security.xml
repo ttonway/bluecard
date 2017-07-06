@@ -11,6 +11,7 @@
     <http security="none" pattern="/static/**"/>
 
     <http use-expressions="true" auto-config="true">
+        <intercept-url pattern="/apply/**" access="permitAll"/>
 
         <intercept-url pattern="/link/image/**" access="permitAll"/>
         <intercept-url pattern="/link/page/**" access="permitAll"/>

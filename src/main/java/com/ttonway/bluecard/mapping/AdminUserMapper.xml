@@ -55,7 +55,7 @@
         insert into admin_user
         (`name`, userCode, password, bankId, role, roleName, createTime, updateTime)
         values
-        (#{name,jdbcType=BIGINT}, #{userCode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{bank.bankId,jdbcType=BIGINT},
+        (#{name,jdbcType=VARCHAR}, #{userCode,jdbcType=VARCHAR}, #{password,jdbcType=VARCHAR}, #{bank.bankId,jdbcType=BIGINT},
         #{role,jdbcType=VARCHAR}, #{roleName,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR})
     </insert>
 
