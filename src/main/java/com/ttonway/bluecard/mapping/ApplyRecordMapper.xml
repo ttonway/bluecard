@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ttonway.bluecard.dao.ApplyRecordMapper">
+
+    <resultMap id="bankBean" type="com.ttonway.bluecard.pojo.Bank">
+        <id column="bankId" property="bankId"/>
+        <result column="bankArea" property="area"/>
+        <result column="bankName" property="bankName"/>
+    </resultMap>
+
+    <resultMap id="orgBean" type="com.ttonway.bluecard.pojo.Organization">
+        <id column="orgId" property="orgId"/>
+        <result column="orgArea" property="area"/>
+        <result column="orgName" property="orgName"/>
+    </resultMap>
+
+    <resultMap id="recordBean" type="com.ttonway.bluecard.pojo.ApplyRecord">
+        <id column="id" property="recordId" jdbcType="BIGINT"/>
+        <result column="name" property="userName" jdbcType="VARCHAR"/>
+        <result column="phone" property="phoneNumber" jdbcType="VARCHAR"/>
+        <result column="profession" property="profession" jdbcType="VARCHAR"/>
+        <result column="accumulation_fund" property="accumulationFund" jdbcType="VARCHAR"/>
+        <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="createTime" property="createTime" jdbcType="VARCHAR"/>
+        <result column="updateTime" property="updateTime" jdbcType="VARCHAR"/>
+        <association column="bankId" property="bank" javaType="com.ttonway.bluecard.pojo.Bank" resultMap="bankBean">
+        </association>
+        <association column="organizationId" property="organization" javaType="com.ttonway.bluecard.pojo.Organization"
+                     resultMap="orgBean">
+        </association>
+    </resultMap>
+
+    <select id="queryRecord" resultMap="recordBean" parameterType="java.lang.Long">
+        select r.*, b.id as bankId, b.area as bankArea, b.bank as bankName, o.id as orgId, o.area as orgArea, o.organization as orgName
+        from apply_record r
+        left join sys_bank b on r.bankId = b.id
+        left join sys_org o on r.organizationId = o.id
+        where o.id = #{recordId,jdbcType=BIGINT}
+    </select>
+
+    <select id="queryRecordList" resultMap="recordBean" parameterType="java.util.HashMap">
+        select r.*, b.id as bankId, b.area as bankArea, b.bank as bankName, o.id as orgId, o.area as orgArea,
+        o.organization as orgName
+        from apply_record r
+        left join sys_bank b on r.bankId = b.id
+        left join sys_org o on r.organizationId = o.id
+        where 1=1
+        <if test="bankId != null">
+            and r.bankId = #{bankId,jdbcType=BIGINT}
+        </if>
+        <if test="status != null">
+            and r.status = #{status,jdbcType=VARCHAR}
+        </if>
+        order by r.id desc
+        limit #{start,jdbcType=BIGINT},#{length,jdbcType=BIGINT}
+    </select>
+
+    <select id="queryRecordListCount" resultType="java.lang.Integer" parameterType="java.util.HashMap">
+        select count(r.id) cnt
+        from apply_record r
+        where 1=1
+        <if test="bankId != null">
+            and r.bankId = #{bankId,jdbcType=BIGINT}
+        </if>
+        <if test="status != null">
+            and r.status = #{status,jdbcType=VARCHAR}
+        </if>
+    </select>
+
+    <insert id="insertRecord" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
+        insert into apply_record
+        (`name`, phone, profession, accumulation_fund, organizationId, bankId, status, createTime, updateTime)
+        values
+        (#{userName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{accumulationFund,jdbcType=VARCHAR},
+         #{organization.orgId,jdbcType=BIGINT}, #{bank.bankId,jdbcType=BIGINT},
+        #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR})
+    </insert>
+
+
+    <update id="updateStatus" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
+        update apply_record
+        set status = #{status,jdbcType=VARCHAR}
+        where id = #{recordId,jdbcType=BIGINT}
+    </update>
+
+    <delete id="deleteRecords">
+        delete from apply_record
+        where id in
+        <foreach collection="array" item="item" open="(" close=")" separator=",">
+            #{item}
+        </foreach>
+    </delete>
+
+</mapper>

@@ -1,0 +1,125 @@
+body.with-navbar {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: #f8f8f8;
+}
+
+.navbar {
+    background: #2fb78f;
+    border-color: #2fb78f;
+}
+.navbar a {
+    color: #fff;
+}
+.navbar-header {
+    text-align: center;
+    width: 100%;
+}
+.container>.navbar-header {
+    margin: 0;
+}
+.navbar-brand {
+    float:none;
+    display:inline-block;
+}
+
+.page-header {
+    margin-top: 0;
+    padding-top: 9px;
+}
+
+ul.input-single-select,
+ul.input-multi-select {
+    background: transparent;
+    list-style: none;
+    padding: 0;
+    border: none;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+ul.input-single-select li,
+ul.input-multi-select li {
+    float: left;
+    width: 49%;
+    padding: 6px 20px 6px 30px;
+    margin: 0;
+    list-style: none;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+}
+ul.input-single-select li:nth-child(2),
+ul.input-multi-select li:nth-child(2) {
+    margin-left: 2%;
+}
+ul.input-single-select li.on,
+ul.input-multi-select li.on {
+    border: 1px solid #5cc17f;
+}
+
+ul.input-single-select li .glyphicon,
+ul.input-multi-select li .glyphicon {
+    float: right;
+    display: none;
+    color: #2fb78f;
+}
+ul.input-single-select li.on .glyphicon,
+ul.input-multi-select li.on .glyphicon {
+    display: inline-block;
+}
+
+.btn-primary {
+    background-color: #2fb78f;
+    border-color: #2fb78f;
+}
+.btn-primary:focus,
+.btn-primary.focus {
+    background-color: #2fb78f;
+    border-color: #2fb78f;
+}
+.btn-primary:hover {
+    background-color: #2fb78f;
+    border-color: #2fb78f;
+}
+.btn-primary:active,
+.btn-primary.active {
+    background-color: #2fb78f;
+    border-color: #2fb78f;
+}
+.btn-primary:active:hover,
+.btn-primary.active:hover,
+.btn-primary:active:focus,
+.btn-primary.active:focus,
+.btn-primary:active.focus,
+.btn-primary.active.focus {
+    background-color: #2fb78f;
+    border-color: #2fb78f;
+}
+
+
+.table>tbody>tr>td.block {
+	width: 50%;
+	padding: 10px 8px 10px 8px;
+}
+.table>tbody>tr>td.block div {
+	float: left;
+	width: 60%;
+	padding-left: 10px;
+	padding-top: 8px;
+    font-size: 18px;
+    color: #000;
+}
+
+.table>tbody>tr>td.block img {
+	float: right;
+	width: 40%;
+	vertical-align:middle;
+}
+
+span.highlight {
+	color: #ff3435;
+	font-size: 24px;
+}
+
