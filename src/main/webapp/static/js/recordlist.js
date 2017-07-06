@@ -1,6 +1,6 @@
 $(function () {
 
-    var tableEl = $('#org-table');
+    var tableEl = $('#record-table');
     var table;
 
     function reloadTable() {
@@ -11,7 +11,6 @@ $(function () {
             language: myApp.datatablesLang,
             "destroy": true,
             "paging": true,
-            "pageLength": 20,
             "lengthChange": false,
             "searching": false,
             "ordering": false,
@@ -19,7 +18,7 @@ $(function () {
             "autoWidth": false,
             "serverSide": true,
             "ajax": function (data, callback, settings) {
-
+                data.status = $('.category.active').attr('status');
                 $.ajax({
                     type: "post",
                     cache: false,
@@ -28,6 +27,17 @@ $(function () {
                     success: function (res) {
                         var result = $.parseJSON(res);
                         if (result.code == 0) {
+                            var cntList = result.cntlist;
+                            var cntMap = {};
+                            for (var i = 0; i < cntList.length; i++) {
+                                var map = cntList[i];
+                                cntMap[map.status] = map.cnt;
+                            }
+                            $('.category').each(function () {
+                                var cnt = cntMap[$(this).attr('status')] || 0;
+                                $(this).find('span').text("(" + cnt + ")");
+                            });
+
                             callback(result);
                         }
                     }
@@ -40,14 +50,28 @@ $(function () {
                     "data": null,
                     "defaultContent": '<input type="checkbox" name="chk_item""/>'
                 },
-                {"data": "orgId"},
-                {"data": "area"},
-                {"data": "orgName"}
+                {
+                    "data": "userName",
+                    "render": function (data, type, full, meta) {
+                        return '<a href="#">' + data + '</a>';
+                    }
+                },
+                {"data": "phoneNumber"},
+                {"data": "profession"},
+                {"data": "accumulationFund"},
+                {"data": "organization.orgName"},
+                {"data": "bank.bankName"},
+                {"data": "createTime"}
             ]
         });
     }
 
     reloadTable();
+    $('.category').on('click', function () {
+        $('.category').removeClass('active');
+        $(this).addClass('active');
+        reloadTable();
+    });
 
     tableEl.on("change", "input[type='checkbox'][name='chk_all']", function () {
         $("input[type='checkbox'][name='chk_item']").prop("checked", $(this).is(':checked'));
@@ -57,10 +81,12 @@ $(function () {
         $("input[type='checkbox'][name='chk_all']").prop("checked", allChecked);
     });
 
-    $('#deleteOrg').on('click', function () {
+
+    // 删除
+    $('#showDelete').on('click', function () {
         var len = $("input[type='checkbox'][name='chk_item']:checked").length;
         if (len == 0) {
-            alert("请选择机构");
+            alert("请选择用户");
             return;
         } else {
             $('#delete-modal .alert-success').hide();
@@ -69,20 +95,27 @@ $(function () {
         }
     });
     $('#delete-modal button.btn-danger').on('click', function () {
-        var array = [];
+        var loanid = [];
+        var flag = 1;
         $("input[type='checkbox'][name='chk_item']:checked").each(function () {
             var data = table.row($(this).parents('tr')).data();
-            array.push(data.orgId);
+            if (data.status != 0) {
+                $('#delete-modal .alert-danger').text("只能删除待联系客户");
+                $('#delete-modal .alert-danger').show();
+                flag = 0;
+            }
+            loanid.push(data.loanid);
         });
-        if (array.length > 0) {
+        if (flag == 1 && loanid.length > 0) {
             $.ajax({
                 type: "post",
                 cache: false,
                 traditional: true,
                 data: {
-                    orgIds: array
+                    loanid: loanid,
+                    r: Math.random()
                 },
-                url: "delete",
+                url: "loan/delete",
                 success: function (res) {
                     var result = $.parseJSON(res);
                     if (result.code == 0) {

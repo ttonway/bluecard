@@ -13,6 +13,8 @@ public interface ApplyRecordService {
 
     int queryRecordListCount(Map<String, Object> map);
 
+    List<Map<String,Object>> queryRecordStatusCount(Map<String,Object> map);
+
     int insertRecord(ApplyRecord record);
 
     int updateStatus(ApplyRecord record);

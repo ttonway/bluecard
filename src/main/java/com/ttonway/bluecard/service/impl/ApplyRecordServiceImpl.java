@@ -32,6 +32,11 @@ public class ApplyRecordServiceImpl implements ApplyRecordService {
     }
 
     @Override
+    public List<Map<String, Object>> queryRecordStatusCount(Map<String, Object> map) {
+        return applyRecordMapper.queryRecordStatusCount(map);
+    }
+
+    @Override
     public int insertRecord(ApplyRecord record) {
         return applyRecordMapper.insertRecord(record);
     }

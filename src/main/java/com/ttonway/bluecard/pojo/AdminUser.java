@@ -1,6 +1,24 @@
 package com.ttonway.bluecard.pojo;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class AdminUser {
+
+    public static final String ROLE_CENTER_MANAGER = "ROLE_CENTER_MANAGER";
+    public static final String ROLE_BRANCH_MARKETER = "ROLE_BRANCH_MARKETER";
+    public static final String ROLE_BACK_MANAGER = "ROLE_BACK_MANAGER";
+    public static final Map<String, String> ROLE_NAME_MAP;
+
+    static {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put(ROLE_CENTER_MANAGER, "市分行管理岗");
+        map.put(ROLE_BRANCH_MARKETER, "支行营销岗");
+        map.put(ROLE_BACK_MANAGER, "后台管理岗");
+        ROLE_NAME_MAP = Collections.unmodifiableMap(map);
+    }
+
     private Long userId;
 
     private String name;

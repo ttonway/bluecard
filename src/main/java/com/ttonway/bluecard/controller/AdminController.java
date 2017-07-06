@@ -22,16 +22,6 @@ import org.springframework.web.servlet.ModelAndView;
 public class AdminController {
     private static Logger logger = Logger.getLogger(AdminController.class);
 
-    public static final Map<String, String> ROLE_NAME_MAP;
-
-    static {
-        Map<String, String> map = new LinkedHashMap<>();
-        map.put("ROLE_CENTER_MANAGER", "市分行管理岗");
-        map.put("ROLE_BRANCH_MARKETER", "支行营销岗");
-        map.put("ROLE_BACK_MANAGER", "后台管理岗");
-        ROLE_NAME_MAP = Collections.unmodifiableMap(map);
-    }
-
     @Autowired
     private AdminUserService adminUserService;
 
@@ -62,7 +52,7 @@ public class AdminController {
     @RequestMapping("/create")
     public ModelAndView create() {
         ModelAndView model = new ModelAndView("usercreate");
-        model.addObject("roleMap", ROLE_NAME_MAP);
+        model.addObject("roleMap", AdminUser.ROLE_NAME_MAP);
         model.addObject("bankList", adminUserService.queryAllBank());
         return model;
     }
@@ -71,7 +61,7 @@ public class AdminController {
     @RequestMapping("/save")
     public ModelAndView save(String name, String userCode, String password, Long bankId, String role) {
         ModelAndView model = new ModelAndView("usercreate");
-        model.addObject("roleMap", ROLE_NAME_MAP);
+        model.addObject("roleMap", AdminUser.ROLE_NAME_MAP);
         model.addObject("bankList", adminUserService.queryAllBank());
 
         if (StringUtils.isEmpty(name)) {
@@ -90,7 +80,7 @@ public class AdminController {
             model.addObject("error", "请选择支行");
             return model;
         }
-        if (!ROLE_NAME_MAP.containsKey(role)) {
+        if (!AdminUser.ROLE_NAME_MAP.containsKey(role)) {
             model.addObject("error", "请选择岗位");
             return model;
         }
@@ -105,7 +95,7 @@ public class AdminController {
             bank.setBankId(bankId);
             adminUser.setBank(bank);
             adminUser.setRole(role);
-            adminUser.setRoleName(ROLE_NAME_MAP.get(role));
+            adminUser.setRoleName(AdminUser.ROLE_NAME_MAP.get(role));
             String time = Utils.currentTimeStr();
             adminUser.setCreateTime(time);
             adminUser.setUpdateTime(time);
