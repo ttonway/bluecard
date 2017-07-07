@@ -74,10 +74,13 @@
         <if test="bankId != null">
             and r.bankId = #{bankId,jdbcType=BIGINT}
         </if>
-        <if test="status != null">
-            and r.status = #{status,jdbcType=VARCHAR}
-        </if>
         group by status
+    </select>
+
+    <select id="queryRecordBankStatusCount" resultType="java.util.HashMap">
+        select r.bankId, r.status, count(r.id) cnt
+        from apply_record r
+        group by bankId, status
     </select>
 
     <insert id="insertRecord" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">

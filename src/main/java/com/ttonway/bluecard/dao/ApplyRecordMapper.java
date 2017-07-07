@@ -15,6 +15,8 @@ public interface ApplyRecordMapper {
 
     List<Map<String,Object>> queryRecordStatusCount(Map<String,Object> map);
 
+    List<Map<String,Object>> queryRecordBankStatusCount();
+
     int insertRecord(ApplyRecord record);
 
     int updateStatus(ApplyRecord record);
