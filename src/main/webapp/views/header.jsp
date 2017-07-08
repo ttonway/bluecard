@@ -52,7 +52,7 @@
                                  alt="User Image">
                             <p>
                                 <%= adminUser.getName() %> - <%= adminUser.getRoleName() %>
-                                <small><%= adminUser.getBank() == null ? "" : adminUser.getBank().getBankName() %>
+                                <small><%= adminUser.getBank().getBankName() == null ? "" : adminUser.getBank().getBankName() %>
                                 </small>
                             </p>
                         </li>

@@ -12,13 +12,14 @@ $(function () {
             "destroy": true,
             "paging": true,
             "lengthChange": false,
-            "searching": false,
+            "searching": true,
             "ordering": false,
             "info": true,
             "autoWidth": false,
             "serverSide": true,
             "ajax": function (data, callback, settings) {
                 data.status = $('.category.active').attr('status');
+                data.searchValue = data.search.value;
                 $.ajax({
                     type: "post",
                     cache: false,
@@ -51,9 +52,11 @@ $(function () {
                     "defaultContent": '<input type="checkbox" name="chk_item""/>'
                 },
                 {
+                    "class": 'record-id',
                     "data": "userName",
                     "render": function (data, type, full, meta) {
-                        return '<a href="#">' + data + '</a>';
+                        window.arg = arguments;
+                        return '<a href="view/' + full.recordId + '">' + data + '</a>';
                     }
                 },
                 {"data": "phoneNumber"},

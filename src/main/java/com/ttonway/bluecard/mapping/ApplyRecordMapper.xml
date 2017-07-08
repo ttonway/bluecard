@@ -51,7 +51,10 @@
         <if test="status != null">
             and r.status = #{status,jdbcType=VARCHAR}
         </if>
-        order by r.id desc
+        <if test="keyword != null">
+            and (r.name like CONCAT('%',#{keyword},'%') or r.phone like CONCAT('%',#{keyword},'%'))
+        </if>
+        order by r.createTime desc
         limit #{start,jdbcType=BIGINT},#{length,jdbcType=BIGINT}
     </select>
 
@@ -64,6 +67,9 @@
         </if>
         <if test="status != null">
             and r.status = #{status,jdbcType=VARCHAR}
+        </if>
+        <if test="keyword != null">
+            and (r.name like CONCAT('%',#{keyword},'%') or r.phone like CONCAT('%',#{keyword},'%'))
         </if>
     </select>
 
@@ -95,7 +101,8 @@
 
     <update id="updateStatus" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
         update apply_record
-        set status = #{status,jdbcType=VARCHAR}
+        set status = #{status,jdbcType=VARCHAR},
+        updateTime = #{updateTime,jdbcType=VARCHAR}
         where id = #{recordId,jdbcType=BIGINT}
     </update>
 

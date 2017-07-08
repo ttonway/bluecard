@@ -62,7 +62,8 @@
 
     <update id="updatePassword" parameterType="com.ttonway.bluecard.pojo.AdminUser">
         update admin_user
-        set password = #{password,jdbcType=VARCHAR}
+        set password = #{password,jdbcType=VARCHAR},
+        updateTime = #{updateTime,jdbcType=VARCHAR}
         where id = #{userId,jdbcType=BIGINT}
     </update>
 

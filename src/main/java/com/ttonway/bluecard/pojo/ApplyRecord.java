@@ -1,5 +1,9 @@
 package com.ttonway.bluecard.pojo;
 
+import java.util.Collections;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
 public class ApplyRecord {
     public static final String STATUS_INIT = "INIT";
     public static final String STATUS_QUALIFIED = "QUALIFIED";//符合
@@ -8,6 +12,21 @@ public class ApplyRecord {
     public static final String STATUS_CONTACTED = "CONTACTED";//已联系
     public static final String STATUS_APPLY_SUCCESS = "APPLY_SUCCESS";//申请进件成功
     public static final String STATUS_APPLY_FAIL = "APPLY_FAIL";//申请进件失败
+
+    public static final Map<String, String> STATUS_NAME_MAP;
+
+    static {
+        Map<String, String> map = new LinkedHashMap<>();
+        map.put(STATUS_INIT, "未处理");
+        map.put(STATUS_QUALIFIED, "符合");
+        map.put(STATUS_UNQUALIFIED, "不符合");
+        map.put(STATUS_UNCONTACTED, "未联系");
+        map.put(STATUS_CONTACTED, "已联系");
+        map.put(STATUS_APPLY_SUCCESS, "申请成功");
+        map.put(STATUS_APPLY_FAIL, "申请失败");
+
+        STATUS_NAME_MAP = Collections.unmodifiableMap(map);
+    }
 
     private Long recordId;
 
@@ -102,5 +121,10 @@ public class ApplyRecord {
 
     public void setUpdateTime(String updateTime) {
         this.updateTime = updateTime;
+    }
+
+
+    public String getStatusName() {
+        return STATUS_NAME_MAP.get(status);
     }
 }

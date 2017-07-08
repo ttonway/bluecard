@@ -8,6 +8,22 @@ public class Bank {
     private String area;
     private String bankName;
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Bank bank = (Bank) o;
+
+        return bankId != null ? bankId.equals(bank.bankId) : bank.bankId == null;
+
+    }
+
+    @Override
+    public int hashCode() {
+        return bankId != null ? bankId.hashCode() : 0;
+    }
+
     public Long getBankId() {
         return bankId;
     }

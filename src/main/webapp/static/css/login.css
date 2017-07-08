@@ -8,7 +8,7 @@
 .login-bg{
 	width:100%;
 	height: 190px;
-	background: url(images/login-bg.png) repeat-x;
+	background: url(../images/login-bg.png) repeat-x;
 }
 .login-cont{
 	width:320px;
@@ -23,7 +23,7 @@
 	line-height: 140px;
 	text-align: center;
 	color:#fff;
-	background: url(images/cont-tit.png) no-repeat;
+	background: url(../images/cont-tit.png) no-repeat;
 }
 .cont-form{
 	padding: 20px;

@@ -32,7 +32,7 @@ public class IndexController {
         if (AuthorityUtils.hasAuthority(userDetails, "ROLE_ADMIN")) {
             return "redirect:/admin/table";
         } else {
-            return "redirect:/list1";
+            return "redirect:/record/table";
         }
     }
 

@@ -6,6 +6,7 @@ import java.util.Map;
 
 public class AdminUser {
 
+    public static final String ROLE_ADMIN = "ROLE_ADMIN";
     public static final String ROLE_CENTER_MANAGER = "ROLE_CENTER_MANAGER";
     public static final String ROLE_BRANCH_MARKETER = "ROLE_BRANCH_MARKETER";
     public static final String ROLE_BACK_MANAGER = "ROLE_BACK_MANAGER";

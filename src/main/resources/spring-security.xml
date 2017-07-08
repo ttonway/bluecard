@@ -15,7 +15,7 @@
 
         <intercept-url pattern="/link/image/**" access="permitAll"/>
         <intercept-url pattern="/link/page/**" access="permitAll"/>
-        <intercept-url pattern="/**" access="hasAnyRole('ROLE_USER','ROLE_ADMIN')"/>
+        <intercept-url pattern="/**" access="hasAnyRole('ROLE_ADMIN','ROLE_CENTER_MANAGER','ROLE_BRANCH_MARKETER','ROLE_BACK_MANAGER')"/>
 
         <form-login
                 login-page='/login'

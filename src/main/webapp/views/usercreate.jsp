@@ -110,6 +110,7 @@
                             <div class="box-footer">
                                 <button type="submit" class="btn btn-primary">确定</button>
                             </div>
+                        </form>
                     </div>
                     <!-- /.box -->
                 </div>

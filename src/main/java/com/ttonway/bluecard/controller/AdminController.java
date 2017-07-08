@@ -122,6 +122,7 @@ public class AdminController {
             adminUser.setUserId(userId);
             adminUser.setPassword(MD5Util.getMD5(password));
         }
+        adminUser.setUpdateTime(Utils.currentTimeStr());
         adminUserService.updatePassword(adminUser);
 
         Map<String, Object> map = new HashMap<String, Object>();
