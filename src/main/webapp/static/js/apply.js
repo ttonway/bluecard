@@ -117,6 +117,9 @@ function submitForm() {
         alert("请选择是否有公积金.");
         return;
     }
+    if (!data.orgId) {
+        data.orgId = '';
+    }
     if (!data.bankId) {
         alert("请选择经办支行.");
         return;
