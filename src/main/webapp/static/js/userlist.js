@@ -42,7 +42,12 @@ $(function () {
                 {"data": "userId"},
                 {"data": "name"},
                 {"data": "userCode"},
-                {"data": "bank.bankName"},
+                {
+                    "data": "bank",
+                    "render": function (data, type, full, meta) {
+                        return data ? data.bankName : '';
+                    }
+                },
                 {"data": "roleName"},
                 {"data": "createTime"}
             ]

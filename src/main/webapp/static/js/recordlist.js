@@ -55,14 +55,18 @@ $(function () {
                     "class": 'record-id',
                     "data": "userName",
                     "render": function (data, type, full, meta) {
-                        window.arg = arguments;
                         return '<a href="view/' + full.recordId + '">' + data + '</a>';
                     }
                 },
                 {"data": "phoneNumber"},
                 {"data": "profession"},
                 {"data": "accumulationFund"},
-                {"data": "organization.orgName"},
+                {
+                    "data": "organization",
+                    "render": function (data, type, full, meta) {
+                        return data ? data.orgName : '';
+                    }
+                },
                 {"data": "bank.bankName"},
                 {"data": "createTime"}
             ]

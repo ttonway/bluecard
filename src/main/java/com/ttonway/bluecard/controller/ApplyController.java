@@ -53,7 +53,7 @@ public class ApplyController {
         record.setProfession(profession);
         record.setAccumulationFund(fund);
         Organization org = new Organization();
-        org.setOrgId(orgId);
+        org.setOrgId(orgId == null ? Long.valueOf(0) : orgId);
         record.setOrganization(org);
         Bank bank = new Bank();
         bank.setBankId(bankId);

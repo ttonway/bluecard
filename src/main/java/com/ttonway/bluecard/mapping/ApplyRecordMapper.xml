@@ -3,9 +3,9 @@
 <mapper namespace="com.ttonway.bluecard.dao.ApplyRecordMapper">
 
     <resultMap id="bankBean" type="com.ttonway.bluecard.pojo.Bank">
-        <id column="bankId" property="bankId"/>
-        <result column="bankArea" property="area"/>
-        <result column="bankName" property="bankName"/>
+        <id column="bkId" property="bankId"/>
+        <result column="bkArea" property="area"/>
+        <result column="bkName" property="bankName"/>
     </resultMap>
 
     <resultMap id="orgBean" type="com.ttonway.bluecard.pojo.Organization">
@@ -31,15 +31,15 @@
     </resultMap>
 
     <select id="queryRecord" resultMap="recordBean" parameterType="java.lang.Long">
-        select r.*, b.id as bankId, b.area as bankArea, b.bank as bankName, o.id as orgId, o.area as orgArea, o.organization as orgName
+        select r.*, b.id as bkId, b.area as bkArea, b.bank as bkName, o.id as orgId, o.area as orgArea, o.organization as orgName
         from apply_record r
         left join sys_bank b on r.bankId = b.id
         left join sys_org o on r.organizationId = o.id
-        where o.id = #{recordId,jdbcType=BIGINT}
+        where r.id = #{recordId,jdbcType=BIGINT}
     </select>
 
     <select id="queryRecordList" resultMap="recordBean" parameterType="java.util.HashMap">
-        select r.*, b.id as bankId, b.area as bankArea, b.bank as bankName, o.id as orgId, o.area as orgArea,
+        select r.*, b.id as bkId, b.area as bkArea, b.bank as bkName, o.id as orgId, o.area as orgArea,
         o.organization as orgName
         from apply_record r
         left join sys_bank b on r.bankId = b.id

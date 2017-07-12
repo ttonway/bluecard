@@ -71,7 +71,7 @@
         </div>
 
         <div class="form-group">
-            <label for="accumulation_fund">是否有公积金</label>
+            <label for="accumulation_fund">是否有公积金或社保</label>
             <ul id="accumulation_fund" class="form-control input-single-select">
                 <li name="accumulation_fund">是<span class="glyphicon glyphicon-ok"></span></li>
                 <li name="accumulation_fund">否<span class="glyphicon glyphicon-ok"></span></li>
@@ -138,7 +138,7 @@
 
 <script src="<%=request.getContextPath()%>/static/lib/jQuery/jquery-2.2.3.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="<%=request.getContextPath()%>/static/js/apply.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/apply.js?v=1"></script>
 
 </body>
 </html>

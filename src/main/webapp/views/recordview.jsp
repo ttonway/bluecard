@@ -62,7 +62,7 @@
                                 <dd>${record.phoneNumber}</dd>
                                 <dt>行业信息</dt>
                                 <dd>${record.profession}</dd>
-                                <dt>是否有公积金</dt>
+                                <dt>是否有公积金或社保</dt>
                                 <dd>${record.accumulationFund}</dd>
                                 <dt>推荐机构</dt>
                                 <dd>${record.organization.area} - ${record.organization.orgName}</dd>

@@ -3,9 +3,9 @@
 <mapper namespace="com.ttonway.bluecard.dao.AdminUserMapper">
 
     <resultMap id="bankBean" type="com.ttonway.bluecard.pojo.Bank">
-        <id column="bankId" property="bankId"/>
-        <result column="bankArea" property="area"/>
-        <result column="bankName" property="bankName"/>
+        <id column="bkId" property="bankId"/>
+        <result column="bkArea" property="area"/>
+        <result column="bkName" property="bankName"/>
     </resultMap>
 
     <resultMap id="adminUserBean" type="com.ttonway.bluecard.pojo.AdminUser">
@@ -22,22 +22,20 @@
     </resultMap>
 
     <select id="queryUser" resultMap="adminUserBean" parameterType="java.lang.Long">
-        select u.*, b.id as bankId, b.area as bankArea, b.bank as bankName
+        select u.*, b.id as bkId, b.area as bkArea, b.bank as bkName
         from admin_user u
-        left join sys_bank b
-        on u.bankId = b.id
+        left join sys_bank b on u.bankId = b.id
         where u.id = #{userId,jdbcType=BIGINT}
     </select>
     <select id="queryUserByCode" resultMap="adminUserBean" parameterType="java.lang.String">
-        select u.*, b.id as bankId, b.area as bankArea, b.bank as bankName
+        select u.*, b.id as bkId, b.area as bkArea, b.bank as bkName
         from admin_user u
-        left join sys_bank b
-        on u.bankId = b.id
+        left join sys_bank b on u.bankId = b.id
         where u.userCode = #{userCode,jdbcType=VARCHAR}
     </select>
 
     <select id="queryUserList" resultMap="adminUserBean" parameterType="java.util.HashMap">
-        select u.*, b.id as bankId, b.area as bankArea, b.bank as bankName
+        select u.*, b.id as bkId, b.area as bkArea, b.bank as bkName
         from admin_user u
         left join sys_bank b
         on u.bankId = b.id
@@ -77,15 +75,15 @@
 
 
     <select id="queryAllBank" resultMap="bankBean">
-        select b.id as bankId, b.area as bankArea, b.bank as bankName
+        select b.id as bkId, b.area as bkArea, b.bank as bkName
         from sys_bank b
         order by b.id asc
     </select>
 
     <select id="queryAllArea" resultType="java.lang.String">
-        select b.area as bankArea
+        select b.area as bkArea
         from sys_bank b
-        group by bankArea
+        group by bkArea
     </select>
 
 </mapper>
