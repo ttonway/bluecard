@@ -38,7 +38,16 @@ public class ApplyController {
         ModelAndView model = new ModelAndView("/apply/form");
 
         List<Organization> organizations = organizationService.queryOrgList(new HashMap<>());
-        model.addObject("orgList", organizations);
+        Map<String, List<Organization>> orgMap = new LinkedHashMap<>();
+        for (Organization org : organizations) {
+            List<Organization> list = orgMap.get(org.getArea());
+            if (list == null) {
+                list = new ArrayList<>();
+                orgMap.put(org.getArea(), list);
+            }
+            list.add(org);
+        }
+        model.addObject("orgMapList", orgMap);
         model.addObject("bankList", adminUserService.queryAllBank());
         return model;
     }

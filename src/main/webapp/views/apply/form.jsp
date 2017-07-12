@@ -17,7 +17,8 @@
     <link rel="shortcut icon" href="" type="image/x-icon"/>
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/select2/select2.min.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css?v=1">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,19 +80,16 @@
         </div>
 
         <div class="form-group">
-            <label for="org1">推荐机构</label>
-            <select class="form-control" id="org-all" style="display: none;">
-                <c:forEach items="${orgList}" var="item">
-                    <option value="${item.orgId}"
-                            area="${item.area}">${item.orgName}</option>
+            <label for="orgId">推荐机构</label>
+            <select class="form-control" id="orgId" name="orgId">
+                <option value="" selected>无</option>
+                <c:forEach items="${orgMapList}" var="item">
+                    <optgroup label="${item.key}">
+                        <c:forEach items="${item.value}" var="org">
+                            <option value="${org.orgId}">${org.orgName}</option>
+                        </c:forEach>
+                    </optgroup>
                 </c:forEach>
-            </select>
-            <select class="form-control" id="org1">
-                <option value="" selected disabled>请选择一级机构</option>
-            </select>
-            <select class="form-control" id="org2" name="orgId"
-                    style="margin-top: 8px; display: none;">
-                <option value="" selected disabled>请选择二级机构</option>
             </select>
         </div>
 
@@ -114,7 +112,8 @@
 
         <input type="hidden" name="profession">
         <input type="hidden" name="fund">
-        <button type="button" class="btn btn-primary btn-block" onclick="submitForm()" style="margin-top: 30px;">申请</button>
+        <button type="button" class="btn btn-primary btn-block" onclick="submitForm()" style="margin-top: 30px;">申请
+        </button>
     </form>
 </div>
 
@@ -138,6 +137,8 @@
 
 <script src="<%=request.getContextPath()%>/static/lib/jQuery/jquery-2.2.3.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/lib/select2/select2.full.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/lib/select2/i18n/zh-CN.js"></script>
 <script src="<%=request.getContextPath()%>/static/js/apply.js?v=1"></script>
 
 </body>

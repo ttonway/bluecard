@@ -22,37 +22,9 @@ $(function () {
         }
     });
 
-
-    //org
-    (function () {
-        var areas = [];
-        $('#org-all option').each(function () {
-            var area = $(this).attr('area');
-            if (areas.indexOf(area) == -1) {
-                areas.push(area);
-            }
-        });
-
-        var org1 = $('#org1');
-        var org2 = $('#org2');
-        org1.find('option:enabled').remove();
-        $.each(areas, function (index, area) {
-            org1.append('<option>' + area + '</option>');
-        });
-        org1.on('change', function () {
-            if (org1.val()) {
-                org2.show();
-            } else {
-                org2.hide();
-            }
-            var options = $('#org-all option[area=' + org1.val() + ']');
-            org2.find('option:enabled').remove();
-            options.each(function () {
-                org2.append($(this).clone());
-            });
-        });
-    })();
-
+    $("#orgId").select2({
+        language: 'zh-CN'
+    });
 
     //bank
     (function () {

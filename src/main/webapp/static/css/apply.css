@@ -70,6 +70,15 @@ ul.input-multi-select li.on .glyphicon {
     display: inline-block;
 }
 
+.select2-container .select2-selection--single {
+    padding: 3px 12px;
+    height: 34px;
+    border: 1px solid #ccc;
+}
+.select2-container .select2-selection--single .select2-selection__arrow {
+    top: 4px;
+}
+
 .btn-primary {
     background-color: #2fb78f;
     border-color: #2fb78f;
