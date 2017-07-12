@@ -140,6 +140,6 @@
 <script src="<%=request.getContextPath()%>/static/lib/daterangepicker/daterangepicker.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/adminLTE/js/app.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/js/app.js"></script>
-<script src="<%=request.getContextPath()%>/static/js/recordlist.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/recordlist.js?v=1"></script>
 </body>
 </html>
