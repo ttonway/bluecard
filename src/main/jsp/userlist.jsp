@@ -107,6 +107,6 @@
 </div><!-- /.modal -->
 
 <jsp:include page="include-script.jsp"/>
-<script src="<%=request.getContextPath()%>/static/js/userlist-c54942ecc1.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/userlist.js"></script>
 </body>
 </html>

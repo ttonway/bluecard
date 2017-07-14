@@ -18,7 +18,7 @@
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/select2/select2.min.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply-ec023f137c.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -135,7 +135,7 @@
     </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-<script src="<%=request.getContextPath()%>/static/js/apply-75f5eaa6b7.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/apply.js"></script>
 
 </body>
 </html>

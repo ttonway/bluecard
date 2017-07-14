@@ -8,3 +8,5 @@
 .externalToolBuilders
 logs
 target
+node_modules/
+rev-manifest.json

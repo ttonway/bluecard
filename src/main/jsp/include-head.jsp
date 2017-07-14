@@ -17,7 +17,7 @@
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/bootstrap-fileinput/css/fileinput.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/adminLTE/css/AdminLTE.min.css">
 <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/adminLTE/css/skins/skin-green.min.css">
-<link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/admin-c74eb6ebc5.css">
+<link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/admin.css">
 
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->

@@ -1,3 +1,8 @@
+//=include jQuery/jquery-2.2.3.min.js
+//=include bootstrap/js/bootstrap.js
+//=include select2/select2.full.js
+//=include select2/i18n/zh-CN.js
+
 $(function () {
     (function () {
         var options1 = $('.input-single-select').find('li');

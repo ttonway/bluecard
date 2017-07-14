@@ -1,3 +1,12 @@
+//=include jQuery/jquery-2.2.3.min.js
+//=include bootstrap/js/bootstrap.js
+//=include datatables/jquery.dataTables.js
+//=include datatables/dataTables.bootstrap.js
+//=include daterangepicker/moment.js
+//=include daterangepicker/daterangepicker.js
+//=include bootstrap-fileinput/js/fileinput.js
+//=include bootstrap-fileinput/js/locales/zh.js
+//=include adminLTE/js/app.js
 
 var myApp = {};
 $(function () {

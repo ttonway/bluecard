@@ -109,6 +109,6 @@
 
 
 <jsp:include page="include-script.jsp"/>
-<script src="<%=request.getContextPath()%>/static/js/recordlist-3a8bd2b155.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/recordlist.js"></script>
 </body>
 </html>

@@ -83,6 +83,6 @@
 
 
 <jsp:include page="include-script.jsp"/>
-<script src="<%=request.getContextPath()%>/static/js/orglist.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/orglist-ed2778cc68.js"></script>
 </body>
 </html>

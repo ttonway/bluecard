@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="" type="image/x-icon"/>
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply-ec023f137c.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -79,7 +79,7 @@
 
 </div>
 
-<script src="<%=request.getContextPath()%>/static/js/apply-75f5eaa6b7.js"></script>
+<script src="<%=request.getContextPath()%>/static/js/apply.js"></script>
 <script>
     $('.btn-primary').attr('href', "form?t=" + new Date().getTime());
 </script>

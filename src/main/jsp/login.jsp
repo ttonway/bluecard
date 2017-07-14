@@ -10,7 +10,7 @@
     <meta name="keywords" content="">
     <meta name="description" content="">
     <title></title>
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/login-8d9d30b28a.css"/>
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/login.css"/>
 </head>
 
 <body>
