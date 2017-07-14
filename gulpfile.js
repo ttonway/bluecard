@@ -34,10 +34,10 @@ gulp.task('clean', function () {
 
 gulp.task('styles', ['clean'], function () {
     return gulp.src(staticSrc + '/css/**/*.css', {base: staticSrc})
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(minifycss())
         .pipe(rev())
-        .pipe(sourcemaps.write('.'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(staticDst))
         .pipe(rev.manifest())
         .pipe(gulp.dest(''));
@@ -45,14 +45,14 @@ gulp.task('styles', ['clean'], function () {
 gulp.task('scripts', ['styles'], function () {
 
     return gulp.src(staticSrc + '/js/**/*.js', {base: staticSrc})
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(include({
             hardFail: true,
             includePaths: [staticDst + "/lib"]
         })).on('error', console.log)
         .pipe(uglify())
         .pipe(rev())
-        .pipe(sourcemaps.write('.'))
+        // .pipe(sourcemaps.write('.'))
         .pipe(gulp.dest(staticDst))
         .pipe(rev.manifest({base: '', merge: true}))
         .pipe(gulp.dest(''));
