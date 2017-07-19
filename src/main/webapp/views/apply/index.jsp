@@ -16,7 +16,7 @@
     <link rel="shortcut icon" href="" type="image/x-icon"/>
 
     <link rel="stylesheet" href="<%=request.getContextPath()%>/static/lib/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/static/css/apply.css?v=2">
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -30,7 +30,26 @@
 <body>
 
 <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
-    <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/banner.png" style="width: 100%;">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-slide-to="0" class="active"></li>
+            <li data-slide-to="1"></li>
+            <li data-slide-to="2"></li>
+        </ol>
+
+        <!-- Wrapper for slides -->
+        <div class="carousel-inner" role="listbox">
+            <div class="item active">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/banner1.jpg">
+            </div>
+            <div class="item">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/banner2.jpg">
+            </div>
+            <div class="item">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/banner3.jpg">
+            </div>
+        </div>
+    </div>
     <div style="height: 15px; background-color: #f2f2f2;"></div>
 
     <table class="table table-bordered">
@@ -73,15 +92,20 @@
         </tbody>
     </table>
 
-    <div class="row" style="padding-right: 80px; padding-left: 80px; padding-top: 15px;">
+    <div class="row" style="padding:10px 80px 15px 80px;">
         <a type="button" class="btn btn-primary btn-lg btn-block" href="#">立即申请</a>
     </div>
 
 </div>
 
 <script src="<%=request.getContextPath()%>/static/lib/jQuery/jquery-2.2.3.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/lib/bootstrap/js/bootstrap.min.js"></script>
+<script src="<%=request.getContextPath()%>/static/lib/carousel-swipe.js"></script>
 <script>
-    $('.btn-primary').attr('href', "form?t=" + new Date().getTime());
+    $(function () {
+        $('.carousel').carousel();
+        $('.btn-primary').attr('href', "form?t=" + new Date().getTime());
+    });
 </script>
 </body>
 </html>

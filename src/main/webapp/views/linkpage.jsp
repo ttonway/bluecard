@@ -31,7 +31,9 @@
 
 <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
     <img class="img-responsive" src="../image/${linkPage.key}" style="width: 100%;">
-    <p style="padding: 15px; font-size: 18px; word-wrap: break-word;">${linkPage.text}</p>
+    <c:if test="${not empty linkPage.text}">
+        <p style="padding: 15px; font-size: 18px; word-wrap: break-word;">${linkPage.text}</p>
+    </c:if>
 </div>
 
 </body>

@@ -110,7 +110,7 @@ ul.input-multi-select li.on .glyphicon {
 
 .table>tbody>tr>td.block {
 	width: 50%;
-	padding: 10px 8px 10px 8px;
+	padding: 6px 8px 6px 8px;
 }
 .table>tbody>tr>td.block div {
 	float: left;
@@ -132,3 +132,27 @@ span.highlight {
 	font-size: 24px;
 }
 
+.carousel-inner>.item>img.background {
+    width: 100%;
+    height: auto;
+}
+.carousel-indicators {
+    bottom: 4px;
+}
+.carousel-indicators li {
+    width: 6px;
+    height: 6px;
+    border-radius: 6px;
+    background-color: #ffffff;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.carousel-indicators .active {
+    width: 8px;
+    height: 8px;
+    background: #aaa6a4;
+    border: 1px #ffffff solid;
+    margin-left: 5px;
+    margin-right: 5px;
+}
