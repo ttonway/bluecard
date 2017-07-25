@@ -22,9 +22,28 @@ $(function () {
         }
     });
 
-    $("#orgId").select2({
-        language: 'zh-CN'
-    });
+    //org
+    (function () {
+        var org1 = $('#org-area');
+        var org2 = $('#orgId');
+        org2.select2({
+            language: 'zh-CN'
+        });
+
+        org1.on('change', function () {
+            if (org1.val()) {
+                org2.next('.select2').show();
+            } else {
+                org2.next('.select2').hide();
+            }
+            var options = $('#org-all optgroup[label=' + org1.val() + '] option');
+            org2.find('option:enabled').remove();
+            org2.append('<option value="">无</option>');
+            options.each(function () {
+                org2.append($(this).clone());
+            });
+        }).change();
+    })();
 
     //bank
     (function () {

@@ -32,6 +32,9 @@ public class LinkController {
         map.put("movie", "9元观影");
         map.put("gasoline", "加油返现");
         map.put("dessert", "半价甜点");
+        map.put("yxtravel", "悦享旅游");
+        map.put("yxcar", "悦享车生活");
+        map.put("yxshopping", "悦享买买买");
         LINK_NAME_MAP = Collections.unmodifiableMap(map);
     }
 

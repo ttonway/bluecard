@@ -25,77 +25,69 @@
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        html, body {
+            height: 100%;
+        }
+
+        .container-fluid {
+            padding: 0;
+            height: 100%;
+        }
+    </style>
 </head>
-
 <body>
-
-<div class="container-fluid" style="padding-left: 0; padding-right: 0;">
+<div class="container-fluid">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <!-- Indicators -->
         <ol class="carousel-indicators">
-            <li data-slide-to="0" class="active"></li>
-            <li data-slide-to="1"></li>
-            <li data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
         </ol>
 
         <!-- Wrapper for slides -->
         <div class="carousel-inner" role="listbox">
             <div class="item active">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/banner1.jpg">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/background1.jpg">
+
+                <div class="carousel-caption">
+                    <div class="title">0元洗车</div>
+                    <div class="underline"></div>
+                    <div>
+                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，到我行指定洗车商户可享0元洗车，每月所有洗车商户共计3000名，每卡每月限使用2次，抢完为止。
+                    </div>
+                </div>
             </div>
             <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/banner2.jpg">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/background2.jpg">
+                <div class="carousel-caption">
+                    <div class="title">9元观影</div>
+                    <div class="underline"></div>
+                    <div>
+                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，关注省分行微信平台，通过优惠活动-区域专属活动-9元观影（盐城地区专享），成功抢票即可享9元观影。每卡每月限参加1次，1次限购2张，每月盐城地区限2000张。
+                    </div>
+                </div>
             </div>
             <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/banner3.jpg">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/background3.jpg">
+                <div class="carousel-caption">
+                    <div class="title">加油返现5%-12%</div>
+                    <div class="underline"></div>
+                    <div>
+                        办理中石化易充值业务的苏通联名卡持卡人，次月将视该信用卡当月消费金额，获得当月累计易充值金额5%至12%的加油金返还。
+                    </div>
+                </div>
             </div>
         </div>
+        <img class="top-logo" src="<%=request.getContextPath()%>/static/images/card-logo.png">
+        <a type="button" class="btn btn-warning" href="#">点击申请</a>
+        <img class="bottom-logo" src="<%=request.getContextPath()%>/static/images/bank-logo-white.png">
     </div>
-    <div style="height: 15px; background-color: #f2f2f2;"></div>
-
-    <table class="table table-bordered">
-        <tbody>
-        <tr>
-            <td class="block" rowspan="2">
-                <a href="<%=request.getContextPath()%>/link/page/car">
-                    <div style="padding-top: 20px;"><span class="highlight">0</span>元洗车</div>
-                    <img class="img-responsive" style="padding-top: 20px;"
-                         src="<%=request.getContextPath()%>/static/images/car.png">
-                </a>
-            </td>
-            <td class="block">
-                <a href="<%=request.getContextPath()%>/link/page/movie">
-                    <div style="padding-top: 20px;"><span class="highlight">9</span>元观影</div>
-                    <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/popcorn.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="block">
-                <a href="<%=request.getContextPath()%>/link/page/gasoline">
-                    <div>加油返现<br/><span class="highlight">5%-12%</span></div>
-                    <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/gasoline.png">
-                </a>
-            </td>
-        </tr>
-        <tr>
-            <td class="block">
-                <a href="<%=request.getContextPath()%>/link/page/dessert">
-                    <div style="padding-top: 20px;"><span class="highlight">半价</span>甜点</div>
-                    <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/dessert.png">
-                </a>
-            </td>
-            <td class="block">
-                <div style="font-size: 14px;">OBU免费领<br/>高速通行费<span class="highlight">9</span>折</div>
-                <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/pass.png">
-            </td>
-        </tr>
-        </tbody>
-    </table>
-
-    <div class="row" style="padding:10px 80px 15px 80px;">
-        <a type="button" class="btn btn-primary btn-lg btn-block" href="#">立即申请</a>
-    </div>
-
 </div>
 
 <script src="<%=request.getContextPath()%>/static/lib/jQuery/jquery-2.2.3.min.js"></script>
@@ -104,8 +96,9 @@
 <script>
     $(function () {
         $('.carousel').carousel();
-        $('.btn-primary').attr('href', "form?t=" + new Date().getTime());
+        $('a[type="button"]').attr('href', "form?t=" + new Date().getTime());
     });
 </script>
+
 </body>
 </html>

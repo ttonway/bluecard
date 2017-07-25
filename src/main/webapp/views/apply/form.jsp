@@ -81,8 +81,7 @@
 
         <div class="form-group">
             <label for="orgId">推荐机构</label>
-            <select class="form-control" id="orgId" name="orgId">
-                <option value="" selected>无</option>
+            <select class="form-control" id="org-all" style="display: none;">
                 <c:forEach items="${orgMapList}" var="item">
                     <optgroup label="${item.key}">
                         <c:forEach items="${item.value}" var="org">
@@ -90,6 +89,15 @@
                         </c:forEach>
                     </optgroup>
                 </c:forEach>
+            </select>
+            <select class="form-control" id="org-area">
+                <option value="" selected disabled>请选择地区</option>
+                <c:forEach items="${orgMapList}" var="item">
+                    <option>${item.key}</option>
+                </c:forEach>
+            </select>
+            <div style="margin-top: 8px;"></div>
+            <select class="form-control" id="orgId" name="orgId">
             </select>
         </div>
 
