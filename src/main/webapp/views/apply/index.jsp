@@ -48,6 +48,8 @@
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
+            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -80,6 +82,30 @@
                     <div class="underline"></div>
                     <div>
                         办理中石化易充值业务的苏通联名卡持卡人，次月将视该信用卡当月消费金额，获得当月累计易充值金额5%至12%的加油金返还。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/background4.jpg">
+                <div class="carousel-caption">
+                    <div class="title">半价甜点</div>
+                    <div class="underline"></div>
+                    <div>
+                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，到我行指定烘焙商户进行刷卡消费，即可享受半价甜点活动，满30元立减15元，最高优惠15元。每卡每周限使用一次，每周限前600名。
+                    </div>
+                </div>
+            </div>
+            <div class="item">
+                <img class="background" src="<%=request.getContextPath()%>/static/images/background5.jpg">
+                <div class="carousel-caption">
+                    <div class="title">ETC车生活
+                    </div>
+                    <div class="underline"></div>
+                    <div>
+                        1.免费赠送OBU<br/>
+                        &nbsp;&nbsp;办理苏通联名卡，激活且单笔消费任意金额，即可获赠OBU设备一套（即电子标签）。<br/>
+                        2.通行费9折<br/>
+                        &nbsp;&nbsp;苏通联名卡客户在全国联网的高速公路上通行，通行费可享受9折优惠，每卡每月最高150元封顶，次月底前以返现的方式将优惠金额返到客户的苏通联名卡中。
                     </div>
                 </div>
             </div>
