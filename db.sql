@@ -178,3 +178,9 @@ INSERT INTO `sys_org` VALUES ('58', '响水', '中石化');
 INSERT INTO `sys_org` VALUES ('59', '响水', '车之坊汽车美容');
 INSERT INTO `sys_org` VALUES ('60', '响水', '小兵汽车美容会所');
 INSERT INTO `sys_org` VALUES ('61', '响水', '爱丽丝面包工坊');
+
+LOCK TABLES `sys_link` WRITE;
+/*!40000 ALTER TABLE `sys_link` DISABLE KEYS */;
+INSERT INTO `sys_link` VALUES ('car','0元洗车','1886dbcf-5663-4258-aba7-78d95140ee1b','image/jpeg',''),('dessert','半价甜点','111c8d80-59e5-4431-8a99-6c6f9103b3ea','image/jpeg',''),('gasoline','加油返现','4f927128-a01b-4de2-aefe-dd4a31f8a05a','image/jpeg',''),('movie','9元观影','aaaf534e-b12c-45b2-bb40-3084321260ca','image/jpeg',''),('yxcar','悦享车>生活','c93a855b-337e-4645-994c-a7c6a1c4e998','image/jpeg',''),('yxshopping','悦享买买买','6d19e21c-f345-4f60-a75a-6e3737849fe2','image/jpeg',''),('yxtravel','悦享旅游','13000ee8-3cf9-437f-a44f-53ea51262b6b','image/jpeg','');
+/*!40000 ALTER TABLE `sys_link` ENABLE KEYS */;
+UNLOCK TABLES;

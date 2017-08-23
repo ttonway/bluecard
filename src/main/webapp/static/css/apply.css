@@ -171,7 +171,7 @@ span.highlight {
     height: 100%;
 }
 .carousel-indicators {
-    margin-bottom: 54px;
+    margin-bottom: 40px;
 }
 .carousel-indicators li {
     width: 8px;
@@ -192,13 +192,12 @@ span.highlight {
 
 .carousel-caption {
     position: absolute;
-    top: 180px;
+    top: 130px;
     right: 35px;
     bottom: 150px;
     left: 35px;
-    font-size: 18px;
+    font-size: 16px;
     text-align: left;
-    line-height: 1.8;
 }
 .carousel-caption .underline {
     height: 1px;
@@ -215,7 +214,7 @@ span.highlight {
 
 .top-logo {
     position: absolute;
-    top: 80px;
+    top: 50px;
     left: 50%;
     margin-left: -150px;
     width: 300px;
@@ -223,7 +222,7 @@ span.highlight {
 }
 .bottom-logo {
     position: absolute;
-    bottom: 30px;
+    bottom: 20px;
     left: 50%;
     margin-left: -75px;
     width: 150px;
@@ -231,7 +230,7 @@ span.highlight {
 }
 .carousel .btn {
     position: absolute;
-    bottom: 100px;
+    bottom: 80px;
     left: 50%;
     margin-left: -150px;
     width: 300px;
