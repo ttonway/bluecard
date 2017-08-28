@@ -31,7 +31,7 @@
 
 <div class="container-fluid" style="padding-left: 0; padding-right: 0;">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" style="margin-bottom: 4px">
             <li data-slide-to="0" class="active"></li>
             <li data-slide-to="1"></li>
             <li data-slide-to="2"></li>

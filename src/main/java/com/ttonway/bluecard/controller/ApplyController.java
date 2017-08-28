@@ -33,6 +33,11 @@ public class ApplyController {
         return "/apply/index";
     }
 
+    @RequestMapping("/index2")
+    public String index2() {
+        return "/apply/index2";
+    }
+
     @RequestMapping("/form")
     public ModelAndView form() {
         ModelAndView model = new ModelAndView("/apply/form");
