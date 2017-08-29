@@ -44,7 +44,7 @@
 <div class="container-fluid">
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
         <!-- Indicators -->
-        <ol class="carousel-indicators">
+        <ol class="carousel-indicators" style="margin-bottom: 70px;">
             <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
             <li data-target="#carousel-example-generic" data-slide-to="1"></li>
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
@@ -58,60 +58,52 @@
                 <img class="background" src="<%=request.getContextPath()%>/static/images/background1.jpg">
 
                 <div class="carousel-caption">
-                    <div class="title">0元洗车</div>
                     <div class="underline"></div>
                     <div>
-                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，到我行指定洗车商户可享0元洗车，每月所有洗车商户共计3000名，每卡每月限使用2次，抢完为止。
+                        <span class="highlight">0元</span>洗车
                     </div>
                 </div>
             </div>
             <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/background2.jpg">
                 <div class="carousel-caption">
-                    <div class="title">9元观影</div>
                     <div class="underline"></div>
                     <div>
-                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，关注省分行微信平台，通过优惠活动-区域专属活动-9元观影（盐城地区专享），成功抢票即可享9元观影。每卡每月限参加1次，1次限购2张，每月盐城地区限2000张。
+                        <span class="highlight">9元</span>观影
                     </div>
                 </div>
             </div>
             <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/background3.jpg">
                 <div class="carousel-caption">
-                    <div class="title">加油返现5%-12%</div>
                     <div class="underline"></div>
                     <div>
-                        办理中石化易充值业务的苏通联名卡持卡人，次月将视该信用卡当月消费金额，获得当月累计易充值金额5%至12%的加油金返还。
+                        加油返现<span class="highlight">5%-12%</span>
                     </div>
                 </div>
             </div>
             <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/background4.jpg">
                 <div class="carousel-caption">
-                    <div class="title">半价甜点</div>
                     <div class="underline"></div>
                     <div>
-                        我行信用卡持卡人当月消费达188元，次月10日开始，一个月内，到我行指定烘焙商户进行刷卡消费，即可享受半价甜点活动，满30元立减15元，最高优惠15元。每卡每周限使用一次，每周限前600名。
+                        <span class="highlight">半价</span>甜点
                     </div>
                 </div>
             </div>
             <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/background5.jpg">
                 <div class="carousel-caption">
-                    <div class="title">ETC车生活
-                    </div>
                     <div class="underline"></div>
                     <div>
-                        1.免费赠送OBU<br/>
-                        &nbsp;&nbsp;办理苏通联名卡，激活且单笔消费任意金额，即可获赠OBU设备一套（即电子标签）。<br/>
-                        2.通行费9折<br/>
-                        &nbsp;&nbsp;苏通联名卡客户在全国联网的高速公路上通行，通行费可享受9折优惠，每卡每月最高150元封顶，次月底前以返现的方式将优惠金额返到客户的苏通联名卡中。
+                        OBU免费赠<br/>
+                        高速通行费<span class="highlight">9折</span>
                     </div>
                 </div>
             </div>
         </div>
         <img class="top-logo" src="<%=request.getContextPath()%>/static/images/card-logo.png">
-        <a type="button" class="btn btn-warning" href="#">点击申请</a>
+        <a type="button" class="btn btn-warning btn-lg" href="#">立即申请卡片</a>
         <img class="bottom-logo" src="<%=request.getContextPath()%>/static/images/bank-logo-white.png">
     </div>
 </div>
