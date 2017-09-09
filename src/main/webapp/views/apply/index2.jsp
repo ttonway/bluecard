@@ -93,7 +93,7 @@
     </table>
 
     <div class="row" style="padding:10px 80px 15px 80px;margin-left: 0;margin-right: 0;">
-        <a type="button" class="btn btn-primary btn-lg btn-block" href="#">立即申请</a>
+        <a type="button" class="btn btn-primary btn-lg btn-block" href="#">立即申请卡片</a>
     </div>
 
 </div>
