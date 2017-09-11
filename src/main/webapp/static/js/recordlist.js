@@ -62,9 +62,9 @@ $(function () {
                 {"data": "profession"},
                 {"data": "accumulationFund"},
                 {
-                    "data": "organization",
+                    "data": "creditLine",
                     "render": function (data, type, full, meta) {
-                        return data ? data.orgName : '';
+                        return data / 10000.0;
                     }
                 },
                 {"data": "bank.bankName"},

@@ -1,3 +1,38 @@
+function calculateCreditLine(num) {
+    var line;
+    if (num <= 1500) {
+        line = 1.0;
+    } else if (num <= 1800) {
+        line = 2.0;
+    } else if (num <= 2500) {
+        line = 2.5;
+    } else if (num <= 3300) {
+        line = 3.0;
+    } else if (num <= 3800) {
+        line = 3.5;
+    } else if (num <= 5000) {
+        line = 4.0;
+    } else if (num <= 6500) {
+        line = 4.5;
+    } else if (num <= 7500) {
+        line = 5.0;
+    } else if (num <= 8500) {
+        line = 5.5;
+    } else if (num <= 10000) {
+        line = 6.0;
+    } else if (num <= 12000) {
+        line = 7.5;
+    } else if (num <= 16000) {
+        line = 8.5;
+    } else if (num <= 19000) {
+        line = 9.0;
+    } else {
+        line = 10.0;
+    }
+    return line;
+}
+
+
 $(function () {
     (function () {
         var options1 = $('.input-single-select').find('li');
@@ -20,6 +55,13 @@ $(function () {
         } else {
             $('#profession-other').hide();
         }
+    });
+
+    $('#income').on('change input propertychange', function () {
+        var num = parseInt($(this).val());
+        var line = calculateCreditLine(num);
+        // line *= 10000;
+        $(this).siblings('p.help-block').text("您的申请额度为" + line + "万元");
     });
 
     //org
@@ -84,8 +126,10 @@ function submitForm() {
         phone: $('input[name="phone"]').val(),
         profession: $('#profession-select').val(),
         fund: $('.input-single-select li.on[name="accumulation_fund"]').text(),
-        orgId: $('select[name="orgId"]').val(),
-        bankId: $('select[name="bankId"]').val()
+        // orgId: $('select[name="orgId"]').val(),
+        profession: $('#profession-select').val(),
+        bankId: $('select[name="bankId"]').val(),
+        income: parseInt($('input[name="income"]').val())
     };
     if (data.profession == '其他') {
         data.profession = $('#profession-other').val();
@@ -108,6 +152,11 @@ function submitForm() {
         alert("请选择是否有公积金或社保.");
         return;
     }
+    if (!data.income) {
+        alert("请输入月工资收入.");
+        return;
+    }
+    data.creditLine = calculateCreditLine(data.income) * 10000;
     if (!data.bankId) {
         alert("请选择经办支行.");
         return;

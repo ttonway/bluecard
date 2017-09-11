@@ -74,6 +74,8 @@ CREATE TABLE `apply_record` (
   `profession` varchar(255) DEFAULT NULL,
   `accumulation_fund` varchar(10) DEFAULT NULL,
   `organizationId` bigint(20) NOT NULL,
+  `income` bigint(10) NOT NULL,
+  `creditLine` bigint(10) NOT NULL,
   `bankId` bigint(20) NOT NULL,
   `status` varchar(50) DEFAULT NULL,
   `createTime` varchar(255) DEFAULT NULL,

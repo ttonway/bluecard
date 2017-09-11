@@ -39,6 +39,9 @@ public class ApplyRecord {
     private Bank bank;
     private String status;
 
+    private Integer income;
+    private Integer creditLine;
+
     private String createTime;
     private String updateTime;
 
@@ -123,6 +126,21 @@ public class ApplyRecord {
         this.updateTime = updateTime;
     }
 
+    public Integer getIncome() {
+        return income;
+    }
+
+    public void setIncome(Integer income) {
+        this.income = income;
+    }
+
+    public Integer getCreditLine() {
+        return creditLine;
+    }
+
+    public void setCreditLine(Integer creditLine) {
+        this.creditLine = creditLine;
+    }
 
     public String getStatusName() {
         return STATUS_NAME_MAP.get(status);
