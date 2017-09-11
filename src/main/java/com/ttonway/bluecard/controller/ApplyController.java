@@ -33,6 +33,11 @@ public class ApplyController {
         return "/apply/index";
     }
 
+    @RequestMapping("/cardlist")
+    public String cardlist() {
+        return "/apply/cardlist";
+    }
+
     @RequestMapping("/index2")
     public String index2() {
         return "/apply/index2";

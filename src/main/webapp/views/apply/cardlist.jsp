@@ -11,7 +11,7 @@
     <meta content="telephone=no" name="format-detection">
     <meta name="wap-font-scale" content="no">
 
-    <title>信用卡申请</title>
+    <title>邮政储蓄银行信用卡</title>
 
     <link rel="shortcut icon" href="" type="image/x-icon"/>
 
@@ -27,45 +27,33 @@
 
     <style>
         body {
-            background-color: #fff;
+            padding-top: 20px;
         }
 
-        html, body {
-            height: 100%;
+        .row {
+            margin-right: -5px;
+            margin-left: -5px;
         }
 
-        .container-fluid {
-            padding: 0;
-            height: 100%;
+        .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-xs-1, .col-xs-10, .col-xs-11, .col-xs-12, .col-xs-2, .col-xs-3, .col-xs-4, .col-xs-5, .col-xs-6, .col-xs-7, .col-xs-8, .col-xs-9 {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+
+        .thumbnail {
+            border: 2px solid #30b78f;
         }
     </style>
 </head>
 <body>
-<div class="container-fluid">
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-        <!-- Indicators -->
-        <ol class="carousel-indicators" style="margin-bottom: 140px;">
-            <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="1"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="2"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="3"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="10"></li>
-        </ol>
 
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner" role="listbox">
-            <div class="item active">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg1.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card1.png">
-                <div class="carousel-caption">
+<div class="container">
+    <div class="row">
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card1.png">
+                <div class="caption">
                     <h4>苏通联名卡金卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 一卡双功能：信用卡及交通卡双功能<br/>
                         2. 先通行后扣款<br/>
@@ -74,12 +62,12 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg1.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card2.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card2.png">
+                <div class="caption">
                     <h4>苏通联名卡普卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 一卡双功能：信用卡及交通卡双功能<br/>
                         2. 先通行后扣款<br/>
@@ -88,12 +76,13 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg3.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card3.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card3.png">
+                <div class="caption">
                     <h4>EMS联名信用卡（普卡)</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 自动成为中邮海外购会员<br/>
                         2. 尊享海淘转运费折扣<br/>
@@ -101,12 +90,12 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg3.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card4.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card4.png">
+                <div class="caption">
                     <h4>EMS联名信用卡（金卡)</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 自动成为中邮海外购会员<br/>
                         2. 尊享海淘转运费折扣<br/>
@@ -114,12 +103,13 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg5.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card5.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card5.png">
+                <div class="caption">
                     <h4>慈善公益卡普卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 公益功能：客户发卡及消费，邮储银行均向江苏省慈善总会捐赠一定金额。<br/>
                         2. 优惠权益：享各类优惠活动，同时享南京南站高铁免费vip休息室服务。<br/>
@@ -130,12 +120,12 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/background5.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card6.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card6.png">
+                <div class="caption">
                     <h4>慈善公益卡金卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 公益功能：客户发卡及消费，邮储银行均向江苏省慈善总会捐赠一定金额。<br/>
                         2. 优惠权益：享各类优惠活动，同时享南京南站高铁免费vip休息室服务。<br/>
@@ -145,12 +135,13 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg7.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card7.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card7.png">
+                <div class="caption">
                     <h4>普卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 永久免年费<br/>
                         2. 分期付款手续费低<br/>
@@ -161,12 +152,12 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg7.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card8.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card8.png">
+                <div class="caption">
                     <h4>金卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 实时交易提醒<br/>
                         2. 50%预借现金比例<br/>
@@ -176,12 +167,13 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg9.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card9.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card9.png">
+                <div class="caption">
                     <h4>小白金（鼎雅）信用卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 多项资费减免<br/>
                         2. 贵宾专线服务<br/>
@@ -192,12 +184,12 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg10.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card10.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card10.png">
+                <div class="caption">
                     <h4>全币种卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 银联&万事达双网络<br/>
                         2. 境外消费免收货币转换手续费<br/>
@@ -207,12 +199,13 @@
                     </p>
                 </div>
             </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg11.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card11.png">
-                <div class="carousel-caption">
+        </div>
+        <div class="clearfix visible-xs-block"></div>
+        <div class="col-xs-6 col-md-4">
+            <div class="thumbnail">
+                <img src="<%=request.getContextPath()%>/static/images/card11.png">
+                <div class="caption">
                     <h4>生肖信用卡</h4>
-                    <div class="underline"></div>
                     <p>
                         1. 具有较高的收藏有价值<br/>
                         2. 首年免年费，消费满6笔再免次年年费。<br/>
@@ -223,32 +216,11 @@
                 </div>
             </div>
         </div>
-
-        <a class="view-more-card" href="cardlist">查看更多卡片</a>
-        <a type="button" class="btn btn-primary btn-lg" href="#">立即申请</a>
-        <img class="bottom-logo" src="<%=request.getContextPath()%>/static/images/bank-logo-white.png">
-
-        <!-- Controls -->
-        <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-            <img src="<%=request.getContextPath()%>/static/images/arrow-left.png" aria-hidden="true">
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-            <img src="<%=request.getContextPath()%>/static/images/arrow-right.png" aria-hidden="true">
-            <span class="sr-only">Next</span>
-        </a>
     </div>
 </div>
 
 <script src="<%=request.getContextPath()%>/static/lib/jQuery/jquery-2.2.3.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/bootstrap/js/bootstrap.min.js"></script>
-<script src="<%=request.getContextPath()%>/static/lib/carousel-swipe.js"></script>
-<script>
-    $(function () {
-        $('.carousel').carousel();
-        $('a[type="button"]').attr('href', "form?t=" + new Date().getTime());
-    });
-</script>
 
 </body>
 </html>

@@ -170,15 +170,28 @@ span.highlight {
     width: 100%;
     height: 100%;
 }
+.carousel-inner>.item>img.card {
+    position: absolute;
+    top: 20px;
+    left: 15%;
+    right: 15%;
+    width: 70%;
+    height: auto;
+}
 
+.carousel-indicators {
+    left: 50%;
+    width: 80%;
+    margin-left: -40%;
+}
 .carousel-indicators li {
     width: 8px;
     height: 8px;
     border-radius: 8px;
     background: #aaa6a4;
     border: 1px #ffffff solid;
-    margin-left: 8px;
-    margin-right: 8px;
+    margin-left: 6px;
+    margin-right: 6px;
 }
 .carousel-indicators .active {
     width: 8px;
@@ -188,23 +201,24 @@ span.highlight {
     margin-right: 8px;
 }
 
+.carousel-control img {
+    margin-top: 180px;
+}
+
 .carousel-caption {
     position: absolute;
-    top: 130px;
-    right: 35px;
+    top: 180px;
+    right: 50px;
     bottom: 150px;
-    left: 35px;
-    font-size: 34px;
-    line-height: 1.5;
-    text-align: center;
+    left: 50px;
+    text-align: left;
 }
 .carousel-caption .underline {
     display: inline-block;
     height: 1px;
     width: 100px;
     background: #fff;
-    margin-top: 10px;
-    margin-bottom: 50px;
+    margin-bottom: 8px;
 }
 .carousel-caption .title {
     font-size: 24px;
@@ -225,7 +239,7 @@ span.highlight {
 }
 .bottom-logo {
     position: absolute;
-    bottom: 40px;
+    bottom: 20px;
     left: 50%;
     margin-left: -75px;
     width: 150px;
@@ -233,10 +247,22 @@ span.highlight {
 }
 .carousel .btn {
     position: absolute;
-    bottom: 120px;
+    bottom: 50px;
     left: 50%;
     margin-left: -150px;
     width: 300px;
     padding: 10px 0 10px 0;
+}
+.carousel .view-more-card {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    padding: 10px 0 10px 0;
+    color: #fff;
+    font-size: 18px;
+    text-align: center;
+    text-decoration: none;
 }
 
