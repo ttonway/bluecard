@@ -101,4 +101,9 @@ public class ApplyController {
         return map;
     }
 
+    @RequestMapping("/result")
+    public String result() {
+        return "/apply/result";
+    }
+
 }

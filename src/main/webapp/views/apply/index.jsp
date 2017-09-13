@@ -50,12 +50,6 @@
             <li data-target="#carousel-example-generic" data-slide-to="2"></li>
             <li data-target="#carousel-example-generic" data-slide-to="3"></li>
             <li data-target="#carousel-example-generic" data-slide-to="4"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="5"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="6"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="7"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="8"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="9"></li>
-            <li data-target="#carousel-example-generic" data-slide-to="10"></li>
         </ol>
 
         <!-- Wrapper for slides -->
@@ -75,33 +69,6 @@
                 </div>
             </div>
             <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg1.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card2.png">
-                <div class="carousel-caption">
-                    <h4>苏通联名卡普卡</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 一卡双功能：信用卡及交通卡双功能<br/>
-                        2. 先通行后扣款<br/>
-                        3. 高速通行费9折<br/>
-                        4. 违章短信提醒
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg3.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card3.png">
-                <div class="carousel-caption">
-                    <h4>EMS联名信用卡（普卡)</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 自动成为中邮海外购会员<br/>
-                        2. 尊享海淘转运费折扣<br/>
-                        3. 享境内寄递邮费优惠
-                    </p>
-                </div>
-            </div>
-            <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/bg3.jpg">
                 <img class="card" src="<%=request.getContextPath()%>/static/images/card4.png">
                 <div class="carousel-caption">
@@ -111,22 +78,6 @@
                         1. 自动成为中邮海外购会员<br/>
                         2. 尊享海淘转运费折扣<br/>
                         3. 享境内寄递邮费优惠
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg5.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card5.png">
-                <div class="carousel-caption">
-                    <h4>慈善公益卡普卡</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 公益功能：客户发卡及消费，邮储银行均向江苏省慈善总会捐赠一定金额。<br/>
-                        2. 优惠权益：享各类优惠活动，同时享南京南站高铁免费vip休息室服务。<br/>
-                        3. 分期付款随心选择<br/>
-                        4. 密码短信双重保护<br/>
-                        5. 积分永久有效<br/>
-                        6. 首年免年费，消费满6笔再免次年年费
                     </p>
                 </div>
             </div>
@@ -146,37 +97,6 @@
                 </div>
             </div>
             <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg7.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card7.png">
-                <div class="carousel-caption">
-                    <h4>普卡</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 永久免年费<br/>
-                        2. 分期付款手续费低<br/>
-                        3. 密码短信双重保护<br/>
-                        4. 消费享受长达50天免息还款期<br/>
-                        5. 账单日可选<br/>
-                        6. 积分永久有效
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg7.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card8.png">
-                <div class="carousel-caption">
-                    <h4>金卡</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 实时交易提醒<br/>
-                        2. 50%预借现金比例<br/>
-                        3. 生日双倍积分<br/>
-                        4. 尊享VIP服务<br/>
-                        5. 应急额度调整
-                    </p>
-                </div>
-            </div>
-            <div class="item">
                 <img class="background" src="<%=request.getContextPath()%>/static/images/bg9.jpg">
                 <img class="card" src="<%=request.getContextPath()%>/static/images/card9.png">
                 <div class="carousel-caption">
@@ -189,21 +109,6 @@
                         4. 网点VIP服务<br/>
                         5. 尊享全球白金卡礼遇<br/>
                         6. 首年免年费，消费满7万或20笔再免次年年费
-                    </p>
-                </div>
-            </div>
-            <div class="item">
-                <img class="background" src="<%=request.getContextPath()%>/static/images/bg10.jpg">
-                <img class="card" src="<%=request.getContextPath()%>/static/images/card10.png">
-                <div class="carousel-caption">
-                    <h4>全币种卡</h4>
-                    <div class="underline"></div>
-                    <p>
-                        1. 银联&万事达双网络<br/>
-                        2. 境外消费免收货币转换手续费<br/>
-                        3. 支持海外网站购物支付，部分网站5%返现<br/>
-                        4. 支付宝钱包和微信钱包便利支付<br/>
-                        5. 首年免年费，消费满12笔再免次年年费
                     </p>
                 </div>
             </div>

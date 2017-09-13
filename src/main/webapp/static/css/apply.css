@@ -172,7 +172,7 @@ span.highlight {
 }
 .carousel-inner>.item>img.card {
     position: absolute;
-    top: 20px;
+    top: 30px;
     left: 15%;
     right: 15%;
     width: 70%;
@@ -207,7 +207,7 @@ span.highlight {
 
 .carousel-caption {
     position: absolute;
-    top: 180px;
+    top: 190px;
     right: 50px;
     bottom: 150px;
     left: 50px;

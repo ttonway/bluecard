@@ -153,7 +153,7 @@
 <script src="<%=request.getContextPath()%>/static/lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/select2/select2.full.min.js"></script>
 <script src="<%=request.getContextPath()%>/static/lib/select2/i18n/zh-CN.js"></script>
-<script src="<%=request.getContextPath()%>/static/js/apply.js?v=1"></script>
+<script src="<%=request.getContextPath()%>/static/js/apply.js?v=3"></script>
 
 </body>
 </html>

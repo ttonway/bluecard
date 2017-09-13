@@ -61,7 +61,7 @@ $(function () {
         var num = parseInt($(this).val());
         var line = calculateCreditLine(num);
         // line *= 10000;
-        $(this).siblings('p.help-block').text("您的申请额度为" + line + "万元");
+        $(this).siblings('p.help-block').text("您的申请额度预计为" + line + "万元，以实际办理为准。");
     });
 
     //org
@@ -170,9 +170,10 @@ function submitForm() {
         success: function (res) {
             var result = $.parseJSON(res);
             if (result.code == 0) {
-                $('#result-modal .modal-title').text("申请成功");
-                $('#result-modal .modal-body p').text("请保持电话畅通，我们会尽快与您联系。");
-                $('#result-modal').modal();
+                // $('#result-modal .modal-title').text("申请成功");
+                // $('#result-modal .modal-body p').text("请保持电话畅通，我们会尽快与您联系。");
+                // $('#result-modal').modal();
+                window.location.href = "result";
             } else {
                 $('#result-modal .modal-title').text("申请失败");
                 $('#result-modal .modal-body p').text(result.msg);
