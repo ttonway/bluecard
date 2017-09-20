@@ -126,10 +126,9 @@ function submitForm() {
         phone: $('input[name="phone"]').val(),
         profession: $('#profession-select').val(),
         fund: $('.input-single-select li.on[name="accumulation_fund"]').text(),
-        // orgId: $('select[name="orgId"]').val(),
-        profession: $('#profession-select').val(),
-        bankId: $('select[name="bankId"]').val(),
-        income: parseInt($('input[name="income"]').val())
+        orgId: $('select[name="orgId"]').val(),
+        bankId: $('select[name="bankId"]').val()
+        // income: parseInt($('input[name="income"]').val())
     };
     if (data.profession == '其他') {
         data.profession = $('#profession-other').val();
@@ -152,11 +151,11 @@ function submitForm() {
         alert("请选择是否有公积金或社保.");
         return;
     }
-    if (!data.income) {
-        alert("请输入月工资收入.");
-        return;
-    }
-    data.creditLine = calculateCreditLine(data.income) * 10000;
+    // if (!data.income) {
+    //     alert("请输入月工资收入.");
+    //     return;
+    // }
+    // data.creditLine = calculateCreditLine(data.income) * 10000;
     if (!data.bankId) {
         alert("请选择经办支行.");
         return;

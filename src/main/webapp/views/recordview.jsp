@@ -42,10 +42,12 @@
                                 <dd>${record.profession}</dd>
                                 <dt>是否有公积金或社保</dt>
                                 <dd>${record.accumulationFund}</dd>
-                                <dt>月收入</dt>
-                                <dd>${record.income}</dd>
-                                <dt>申请额度（万）</dt>
-                                <dd>${record.creditLine / 10000}</dd>
+                                <dt>推荐机构</dt>
+                                <dd>${record.organization.area} - ${record.organization.orgName}</dd>
+                                <%--<dt>月收入</dt>--%>
+                                <%--<dd>${record.income}</dd>--%>
+                                <%--<dt>申请额度（万）</dt>--%>
+                                <%--<dd>${record.creditLine / 10000}</dd>--%>
                                 <dt>经办支行</dt>
                                 <dd>${record.bank.area} - ${record.bank.bankName}</dd>
                                 <dt>申请时间</dt>

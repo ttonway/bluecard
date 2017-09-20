@@ -79,32 +79,10 @@
             </ul>
         </div>
 
-        <div class="form-group">
-            <label for="income">额度测算</label>
-            <input type="number" class="form-control" id="income" name="income" placeholder="请输入您的月工资收入（元）">
-            <p class="help-block"></p>
-        </div>
-
         <%--<div class="form-group">--%>
-            <%--<label for="orgId">推荐机构</label>--%>
-            <%--<select class="form-control" id="org-all" style="display: none;">--%>
-                <%--<c:forEach items="${orgMapList}" var="item">--%>
-                    <%--<optgroup label="${item.key}">--%>
-                        <%--<c:forEach items="${item.value}" var="org">--%>
-                            <%--<option value="${org.orgId}">${org.orgName}</option>--%>
-                        <%--</c:forEach>--%>
-                    <%--</optgroup>--%>
-                <%--</c:forEach>--%>
-            <%--</select>--%>
-            <%--<select class="form-control" id="org-area">--%>
-                <%--<option value="" selected disabled>请选择地区</option>--%>
-                <%--<c:forEach items="${orgMapList}" var="item">--%>
-                    <%--<option>${item.key}</option>--%>
-                <%--</c:forEach>--%>
-            <%--</select>--%>
-            <%--<div style="margin-top: 8px;"></div>--%>
-            <%--<select class="form-control" id="orgId" name="orgId">--%>
-            <%--</select>--%>
+            <%--<label for="income">额度测算</label>--%>
+            <%--<input type="number" class="form-control" id="income" name="income" placeholder="请输入您的月工资收入（元）">--%>
+            <%--<p class="help-block"></p>--%>
         <%--</div>--%>
 
         <div class="form-group">
@@ -121,6 +99,28 @@
             <select class="form-control" id="bank2" name="bankId"
                     style="margin-top: 8px; display: none;">
                 <option value="" selected disabled>请选择二级支行</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="orgId">推荐机构（如有，请选择）</label>
+            <select class="form-control" id="org-all" style="display: none;">
+                <c:forEach items="${orgMapList}" var="item">
+                    <optgroup label="${item.key}">
+                        <c:forEach items="${item.value}" var="org">
+                            <option value="${org.orgId}">${org.orgName}</option>
+                        </c:forEach>
+                    </optgroup>
+                </c:forEach>
+            </select>
+            <select class="form-control" id="org-area">
+                <option value="" selected disabled>请选择地区</option>
+                <c:forEach items="${orgMapList}" var="item">
+                    <option>${item.key}</option>
+                </c:forEach>
+            </select>
+            <div style="margin-top: 8px;"></div>
+            <select class="form-control" id="orgId" name="orgId">
             </select>
         </div>
 

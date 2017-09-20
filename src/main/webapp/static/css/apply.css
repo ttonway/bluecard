@@ -207,7 +207,7 @@ span.highlight {
 
 .carousel-caption {
     position: absolute;
-    top: 190px;
+    top: 200px;
     right: 50px;
     bottom: 150px;
     left: 50px;
@@ -265,4 +265,14 @@ span.highlight {
     text-align: center;
     text-decoration: none;
 }
-
+.carousel .card-tips {
+    position: absolute;
+    bottom: 180px;
+    left: 50%;
+    margin-left: -150px;
+    width: 300px;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    text-decoration: none;
+}

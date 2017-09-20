@@ -47,36 +47,39 @@ public class ApplyController {
     public ModelAndView form() {
         ModelAndView model = new ModelAndView("/apply/form");
 
-//        List<Organization> organizations = organizationService.queryOrgList(new HashMap<>());
-//        Map<String, List<Organization>> orgMap = new LinkedHashMap<>();
-//        for (Organization org : organizations) {
-//            List<Organization> list = orgMap.get(org.getArea());
-//            if (list == null) {
-//                list = new ArrayList<>();
-//                orgMap.put(org.getArea(), list);
-//            }
-//            list.add(org);
-//        }
-//        model.addObject("orgMapList", orgMap);
+        List<Organization> organizations = organizationService.queryOrgList(new HashMap<>());
+        Map<String, List<Organization>> orgMap = new LinkedHashMap<>();
+        for (Organization org : organizations) {
+            List<Organization> list = orgMap.get(org.getArea());
+            if (list == null) {
+                list = new ArrayList<>();
+                orgMap.put(org.getArea(), list);
+            }
+            list.add(org);
+        }
+        model.addObject("orgMapList", orgMap);
         model.addObject("bankList", adminUserService.queryAllBank());
         return model;
     }
 
     @RequestMapping("/submit")
     @ResponseBody
-    public Map<String, Object> submit(String name, String phone, String profession, String fund, Integer income, Integer creditLine, Long bankId) {
+    public Map<String, Object> submit(String name, String phone, String profession, String fund, Long orgId, Long bankId) {
 
         ApplyRecord record = new ApplyRecord();
         record.setUserName(name);
         record.setPhoneNumber(phone);
         record.setProfession(profession);
         record.setAccumulationFund(fund);
-        record.setIncome(income);
-        record.setCreditLine(creditLine);
+
         Organization org = new Organization();
-//        org.setOrgId(orgId == null ? Long.valueOf(0) : orgId);
-        org.setOrgId(Long.valueOf(0));
+        org.setOrgId(orgId == null ? Long.valueOf(0) : orgId);
         record.setOrganization(org);
+//        record.setIncome(income);
+//        record.setCreditLine(creditLine);
+//        Organization org = new Organization();
+//        org.setOrgId(Long.valueOf(0));
+//        record.setOrganization(org);
 
         Bank bank = new Bank();
         bank.setBankId(bankId);

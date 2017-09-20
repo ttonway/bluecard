@@ -83,7 +83,7 @@
             <!-- Optionally, you can add icons to the links -->
             <% if (AuthorityUtils.hasAuthority(userDetails, "ROLE_ADMIN")) { %>
             <li<% if (uri.equals("userlist") || uri.equals("usercreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/admin/table"><i class="fa fa-link"></i> <span>帐号信息</span></a></li>
-            <%--<li<% if (uri.equals("orglist") || uri.equals("orgcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/org/table"><i class="fa fa-link"></i> <span>推荐机构</span></a></li>--%>
+            <li<% if (uri.equals("orglist") || uri.equals("orgcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/org/table"><i class="fa fa-link"></i> <span>推荐机构</span></a></li>
             <li<% if (uri.equals("linkgrid") || uri.equals("linkcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/link/table"><i class="fa fa-link"></i> <span>活动内容</span></a></li>
             <li<% if (uri.equals("recordlist") || uri.equals("recordview")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/record/table"><i class="fa fa-link"></i> <span>申请记录</span></a></li>
             <li<% if (uri.equals("statistics")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/statistics/table"><i class="fa fa-link"></i> <span>汇总信息</span></a></li>

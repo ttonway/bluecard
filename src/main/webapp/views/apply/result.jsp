@@ -34,7 +34,7 @@
 
 <div class="container-fluid" style="padding-left: 0; padding-right: 0; text-align: center;">
     <img class="img-responsive" src="<%=request.getContextPath()%>/static/images/result_ok.png"
-         style="margin: auto; padding: 40px 0 20px 0;">
+         style="margin: auto; padding: 30px 0 10px 0;">
     <h3>您的申请已成功</h3>
     <h4 style="color: #31b88e; margin-bottom: 20px;">我们将尽快与您联系</h4>
     <a href="http://c.eqxiu.com/s/40lGexs0">
