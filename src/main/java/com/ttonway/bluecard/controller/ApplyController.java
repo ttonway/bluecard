@@ -72,6 +72,8 @@ public class ApplyController {
         record.setProfession(profession);
         record.setAccumulationFund(fund);
 
+        record.setIncome(-1);
+        record.setCreditLine(-1);
         Organization org = new Organization();
         org.setOrgId(orgId == null ? Long.valueOf(0) : orgId);
         record.setOrganization(org);

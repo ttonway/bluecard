@@ -57,9 +57,9 @@
                         <h4>苏通联名卡金卡</h4>
                         <p>
                             1. 免费赠送OBU<br/>
-                            2. 高速通行9折<br/>
-                            3. 0元洗车<br/>
-                            4. 加油返现<br/>
+                            2. 高速通行<span class="highlight">9折</span><br/>
+                            3. <span class="highlight">0元</span>洗车<br/>
+                            4. 加油返现最高<span class="highlight">12%</span><br/>
                             5. 违章提醒
                         </p>
                     </div>
@@ -73,10 +73,10 @@
                     <div class="caption">
                         <h4>慈善公益卡金卡</h4>
                         <p>
-                            1. 您消费，我捐款<br/>
+                            1. <span class="highlight">您消费，我捐款</span><br/>
                             2. 积分永久有效<br/>
-                            3. 尊享网点VIP服务<br/>
-                            4. 南京南站高铁VIP休息室服务
+                            3. 尊享网点<span class="highlight">VIP</span>服务<br/>
+                            4. 南京南站高铁<span class="highlight">VIP</span>休息室服务
                         </p>
                     </div>
                 </div>
@@ -90,9 +90,9 @@
                     <div class="caption">
                         <h4>鼎雅白金卡</h4>
                         <p>
-                            1. 额度高，最高50万<br/>
+                            1. 额度高，最高<span class="highlight">50万</span><br/>
                             2. 年费低，满足条件可减免<br/>
-                            3. 权益多，不限次24小时道路救援等<br/>
+                            3. 权益多，<span class="highlight">不限次24小时道路救援等</span><br/>
                             4. 资费低，免挂失费、换卡费等<br/>
                             5. 尊享VIP，网点办理业务享受贵宾通道
                         </p>
@@ -107,8 +107,8 @@
                     <div class="caption">
                         <h4>鼎致白金卡</h4>
                         <p>
-                            1. 额度高，最高80万<br/>
-                            2. 权益多，道路救援、机场高铁等多项服务<br/>
+                            1. 额度高，最高<span class="highlight">80万</span><br/>
+                            2. 权益多，<span class="highlight">道路救援、机场高铁等多项服务</span><br/>
                             3. 资费低，免挂失费、换卡费等<br/>
                             4. 尊享银联&万事达白金服务礼遇<br/>
                             5. 尊享网点VIP服务
@@ -125,11 +125,10 @@
                     <div class="caption">
                         <h4>自动分期卡成长卡</h4>
                         <p>
-                            1. 分期费率低，0.54%每期<br/>
+                            1. 分期费率低，<span class="highlight">0.54%</span>每期<br/>
                             2. 手续费减免<br/>
                             3. 分期档次多<br/>
-                            4. 双倍积分<br/>
-                            自动分期、期数任选
+                            4. <span class="highlight">双倍积分</span>
                         </p>
                     </div>
                 </div>
@@ -142,8 +141,8 @@
                     <div class="caption">
                         <h4>自动分期鸿运卡</h4>
                         <p>
-                            1. 额度高，最高15万<br/>
-                            2. 分期费率低，0.57%每期<br/>
+                            1. 额度高，最高<span class="highlight">15万</span><br/>
+                            2. 分期费率低，<span class="highlight">0.57%</span>每期<br/>
                             3. 手续费减免<br/>
                             4. 分期档次多
                         </p>
@@ -159,8 +158,8 @@
                     <div class="caption">
                         <h4>生肖信用卡</h4>
                         <p>
-                            1. 收藏价值高<br/>
-                            2. 尊享VIP服务<br/>
+                            1. <span class="highlight">收藏价值高</span><br/>
+                            2. 尊享<span class="highlight">VIP</span>服务<br/>
                             3. 免费交易提醒<br/>
                             4. 生日双倍积分
                         </p>
@@ -176,8 +175,8 @@
                         <h4>EMS联名卡金卡</h4>
                         <p>
                             1. 自动成为中邮海外购会员<br/>
-                            2. 免收货币转换费<br/>
-                            3. 海淘转运费最低8折
+                            2. <span class="highlight">免收货币转换费</span><br/>
+                            3. 海淘转运费最低<span class="highlight">8折</span>
                         </p>
                     </div>
                 </div>
@@ -191,9 +190,9 @@
                     <div class="caption">
                         <h4>标准普卡IC信用卡</h4>
                         <p>
-                            1. 终身免年费<br/>
+                            1. 终身<span class="highlight">免年费</span><br/>
                             2. 积分永久有效<br/>
-                            3. 消费免息期长
+                            3. 消费免息期长，最长<span class="highlight">50天</span>
                         </p>
                     </div>
                 </div>
@@ -206,8 +205,8 @@
                     <div class="caption">
                         <h4>标准金卡IC信用卡</h4>
                         <p>
-                            1. 预借现金比例高，50%<br/>
-                            2. 安全性高，48小时失卡保障<br/>
+                            1. 预借现金比例高，<span class="highlight">50%</span><br/>
+                            2. 安全性高，<span class="highlight">48小时失卡保障</span><br/>
                             3. 生日双倍积分<br/>
                             4. 免费短信提醒
                         </p>

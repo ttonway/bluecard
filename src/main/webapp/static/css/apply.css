@@ -155,7 +155,7 @@ ul.input-multi-select li.on .glyphicon {
 	vertical-align:middle;
 }
 
-span.highlight {
+.table>tbody>tr>td.block span.highlight {
 	color: #ff3435;
 	font-size: 24px;
 }
@@ -225,8 +225,12 @@ span.highlight {
     font-weight: bold;
 }
 .carousel-caption span.highlight {
-    color: #f7af39;
-    font-size: 44px;
+    font-size: 18px;
+    font-weight: 500;
+}
+.thumbnail span.highlight {
+    font-size: 18px;
+    font-weight: 500;
 }
 
 .top-logo {
