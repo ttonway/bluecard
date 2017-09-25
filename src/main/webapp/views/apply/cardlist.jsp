@@ -108,7 +108,7 @@
                         <h4>鼎致白金卡</h4>
                         <p>
                             1. 额度高，最高<span class="highlight">80万</span><br/>
-                            2. 权益多，<span class="highlight">道路救援、机场高铁等多项服务</span><br/>
+                            2. 权益多，<span class="highlight">道路救援、机场高铁服务、专家号预约等多项服务</span><br/>
                             3. 资费低，免挂失费、换卡费等<br/>
                             4. 尊享银联&万事达白金服务礼遇<br/>
                             5. 尊享网点VIP服务

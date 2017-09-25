@@ -41,6 +41,7 @@ public class ApplyRecord {
 
     private Integer income;
     private Integer creditLine;
+    private String refereePhone;
 
     private String createTime;
     private String updateTime;
@@ -144,5 +145,13 @@ public class ApplyRecord {
 
     public String getStatusName() {
         return STATUS_NAME_MAP.get(status);
+    }
+
+    public String getRefereePhone() {
+        return refereePhone;
+    }
+
+    public void setRefereePhone(String refereePhone) {
+        this.refereePhone = refereePhone;
     }
 }

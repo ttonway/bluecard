@@ -127,7 +127,9 @@ function submitForm() {
         profession: $('#profession-select').val(),
         fund: $('.input-single-select li.on[name="accumulation_fund"]').text(),
         orgId: $('select[name="orgId"]').val(),
-        bankId: $('select[name="bankId"]').val()
+        bankId: $('select[name="bankId"]').val(),
+        refereePhone: $('input[name="referee-phone"]').val()
+
         // income: parseInt($('input[name="income"]').val())
     };
     if (data.profession == '其他') {

@@ -78,6 +78,7 @@ CREATE TABLE `apply_record` (
   `creditLine` bigint(10) NOT NULL,
   `bankId` bigint(20) NOT NULL,
   `status` varchar(50) DEFAULT NULL,
+  `refereePhone` varchar(20) DEFAULT NULL,
   `createTime` varchar(255) DEFAULT NULL,
   `updateTime` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)

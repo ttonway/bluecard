@@ -172,7 +172,7 @@ ul.input-multi-select li.on .glyphicon {
 }
 .carousel-inner>.item>img.card {
     position: absolute;
-    top: 30px;
+    top: 20px;
     left: 15%;
     right: 15%;
     width: 70%;
@@ -207,7 +207,7 @@ ul.input-multi-select li.on .glyphicon {
 
 .carousel-caption {
     position: absolute;
-    top: 200px;
+    top: 190px;
     right: 50px;
     bottom: 150px;
     left: 50px;
@@ -225,11 +225,11 @@ ul.input-multi-select li.on .glyphicon {
     font-weight: bold;
 }
 .carousel-caption span.highlight {
-    font-size: 18px;
+    color: #ffe417;
     font-weight: 500;
 }
 .thumbnail span.highlight {
-    font-size: 18px;
+    color: #ffe417;
     font-weight: 500;
 }
 

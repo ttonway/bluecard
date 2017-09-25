@@ -44,6 +44,8 @@
                                 <dd>${record.accumulationFund}</dd>
                                 <dt>推荐机构</dt>
                                 <dd>${record.organization.area} - ${record.organization.orgName}</dd>
+                                <dt>推荐人手机号</dt>
+                                <dd>${record.refereePhone}</dd>
                                 <%--<dt>月收入</dt>--%>
                                 <%--<dd>${record.income}</dd>--%>
                                 <%--<dt>申请额度（万）</dt>--%>

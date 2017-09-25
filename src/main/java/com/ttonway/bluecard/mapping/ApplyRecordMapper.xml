@@ -23,6 +23,7 @@
         <result column="income" property="income" jdbcType="BIGINT"/>
         <result column="creditLine" property="creditLine" jdbcType="BIGINT"/>
         <result column="status" property="status" jdbcType="VARCHAR"/>
+        <result column="refereePhone" property="refereePhone" jdbcType="VARCHAR"/>
         <result column="createTime" property="createTime" jdbcType="VARCHAR"/>
         <result column="updateTime" property="updateTime" jdbcType="VARCHAR"/>
         <association column="bankId" property="bank" javaType="com.ttonway.bluecard.pojo.Bank" resultMap="bankBean">
@@ -93,12 +94,12 @@
 
     <insert id="insertRecord" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
         insert into apply_record
-        (`name`, phone, profession, accumulation_fund, organizationId, bankId, status, createTime, updateTime, income, creditLine)
+        (`name`, phone, profession, accumulation_fund, organizationId, bankId, status, createTime, updateTime, income, creditLine, refereePhone)
         values
         (#{userName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{accumulationFund,jdbcType=VARCHAR},
          #{organization.orgId,jdbcType=BIGINT}, #{bank.bankId,jdbcType=BIGINT},
         #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR},
-        #{income,jdbcType=BIGINT}, #{creditLine,jdbcType=BIGINT})
+        #{income,jdbcType=BIGINT}, #{creditLine,jdbcType=BIGINT}, #{refereePhone,jdbcType=BIGINT})
     </insert>
 
 

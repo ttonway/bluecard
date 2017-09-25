@@ -124,6 +124,11 @@
             </select>
         </div>
 
+        <div class="form-group">
+            <label for="referee-phone">推荐人手机号</label>
+            <input type="text" class="form-control" id="referee-phone" name="referee-phone">
+        </div>
+
         <input type="hidden" name="profession">
         <input type="hidden" name="fund">
         <button type="button" class="btn btn-primary btn-block" onclick="submitForm()" style="margin-top: 30px;">申请
