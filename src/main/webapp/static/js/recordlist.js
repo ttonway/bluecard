@@ -2,6 +2,7 @@ $(function () {
 
     var tableEl = $('#record-table');
     var table;
+    var filterData;
 
     function reloadTable() {
 
@@ -19,7 +20,12 @@ $(function () {
             "serverSide": true,
             "ajax": function (data, callback, settings) {
                 data.status = $('.category.active').attr('status');
+                data.minTime = $('#daterange-btn').attr('min-time');
+                data.maxTime = $('#daterange-btn').attr('max-time');
                 data.searchValue = data.search.value;
+
+                // save filter data
+                filterData = $.extend(true, {}, data);
                 $.ajax({
                     type: "post",
                     cache: false,
@@ -49,7 +55,7 @@ $(function () {
                     "class": 'td-checkbox',
                     "orderable": false,
                     "data": null,
-                    "defaultContent": '<input type="checkbox" name="chk_item""/>'
+                    "defaultContent": '<input type="checkbox" name="chk_item"/>'
                 },
                 {
                     "class": 'record-id',
@@ -61,16 +67,22 @@ $(function () {
                 {"data": "phoneNumber"},
                 {"data": "profession"},
                 {"data": "accumulationFund"},
-                {
-                    "data": "organization",
-                    "render": function (data, type, full, meta) {
-                        return data ? data.orgName : '';
-                    }
-                },
+                {"data": "refereePhone"},
+                {"data": "bank.area"},
                 {"data": "bank.bankName"},
                 {"data": "createTime"}
             ]
         });
+
+
+        table.columns().every( function () {
+            var that = this;
+            $('input', this.footer()).on('keyup change', function() {
+                if (that.search() !== this.value) {
+                    that.search(this.value).draw();
+                }
+            } );
+        } );
     }
 
     reloadTable();
@@ -79,6 +91,43 @@ $(function () {
         $(this).addClass('active');
         reloadTable();
     });
+
+    $('#daterange-btn').daterangepicker(
+        {
+            locale: {
+                applyLabel: '确认',
+                cancelLabel: '取消',
+                fromLabel: '起始时间',
+                toLabel: '结束时间',
+                customRangeLabel: '自定义',
+                daysOfWeek: ['日', '一', '二', '三', '四', '五', '六'],
+                monthNames: ['一月', '二月', '三月', '四月', '五月', '六月',
+                    '七月', '八月', '九月', '十月', '十一月', '十二月'],
+                firstDay: 1
+            },
+            ranges: {
+                '所有': [moment(), moment()],
+                '过去7天': [moment().subtract(6, 'days'), moment()],
+                '过去30天': [moment().subtract(29, 'days'), moment()],
+                '本月': [moment().startOf('month'), moment().endOf('month')]
+            },
+            startDate: moment(),
+            endDate: moment()
+        },
+        function (start, end) {
+            if (start.isSame(end, 'day')) {
+                $('#daterange-btn').attr('min-time', '');
+                $('#daterange-btn').attr('max-time', '');
+                $('#daterange-btn span').html('<i class="fa fa-calendar"></i> 所有');
+            } else {
+                $('#daterange-btn').attr('min-time', start.format("YYYY-MM-DD HH:mm:ss"));
+                $('#daterange-btn').attr('max-time', end.format("YYYY-MM-DD HH:mm:ss"));
+                $('#daterange-btn span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+            }
+
+            reloadTable();
+        }
+    );
 
     tableEl.on("change", "input[type='checkbox'][name='chk_all']", function () {
         $("input[type='checkbox'][name='chk_item']").prop("checked", $(this).is(':checked'));
@@ -89,6 +138,9 @@ $(function () {
     });
 
 
+    $('#export').on('click', function () {
+        $.standardPost('export', filterData);
+    });
     // 删除
     $('#showDelete').on('click', function () {
         var len = $("input[type='checkbox'][name='chk_item']:checked").length;

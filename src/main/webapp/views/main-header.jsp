@@ -1,9 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page import="com.ttonway.bluecard.pojo.AdminUserDetails" %>
 <%@ page import="com.ttonway.bluecard.util.AuthorityUtils" %>
 <%@ page import="org.springframework.security.core.context.SecurityContextHolder" %>
 <%@ page import="com.ttonway.bluecard.pojo.AdminUser" %>
+<%@ page import="com.ttonway.bluecard.pojo.ApplyRecordStatistics" %>
 <%
     AdminUserDetails userDetails = (AdminUserDetails) SecurityContextHolder.getContext()
         .getAuthentication()
@@ -86,13 +88,37 @@
             <li<% if (uri.equals("orglist") || uri.equals("orgcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/org/table"><i class="fa fa-link"></i> <span>推荐机构</span></a></li>
             <li<% if (uri.equals("linkgrid") || uri.equals("linkcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/link/table"><i class="fa fa-link"></i> <span>活动内容</span></a></li>
             <li<% if (uri.equals("recordlist") || uri.equals("recordview")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/record/table"><i class="fa fa-link"></i> <span>申请记录</span></a></li>
-            <li<% if (uri.equals("statistics")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/statistics/table"><i class="fa fa-link"></i> <span>汇总信息</span></a></li>
+            <li class="treeview<% if (uri.equals("statistics")) { %> active<% } %>">
+                <a href="#">
+                    <i class="fa fa-link"></i>
+                    <span>汇总信息</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li<c:if test="${requestScope.stype eq ApplyRecordStatistics.TYPE_BANK}"> class="active"</c:if>><a href="<%=request.getContextPath()%>/statistics/bank"><i class="fa fa-circle-o"></i> 网点</a></li>
+                    <li<c:if test="${requestScope.stype eq ApplyRecordStatistics.TYPE_REFEREE}"> class="active"</c:if>><a href="<%=request.getContextPath()%>/statistics/referee"><i class="fa fa-circle-o"></i> 推荐手机号码</a></li>
+                </ul>
+            </li>
 
             <% } else if (AuthorityUtils.hasAuthority(userDetails, "ROLE_CENTER_MANAGER")) { %>
             <li<% if (uri.equals("orglist") || uri.equals("orgcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/org/table"><i class="fa fa-link"></i> <span>推荐机构</span></a></li>
             <li<% if (uri.equals("linkgrid") || uri.equals("linkcreate")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/link/table"><i class="fa fa-link"></i> <span>活动内容</span></a></li>
             <li<% if (uri.equals("recordlist") || uri.equals("recordview")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/record/table"><i class="fa fa-link"></i> <span>申请记录</span></a></li>
-            <li<% if (uri.equals("statistics")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/statistics/table"><i class="fa fa-link"></i> <span>汇总信息</span></a></li>
+            <li class="treeview<% if (uri.equals("statistics")) { %> active<% } %>">
+                <a href="#">
+                    <i class="fa fa-link"></i>
+                    <span>汇总信息</span>
+                    <span class="pull-right-container">
+                        <i class="fa fa-angle-left pull-right"></i>
+                    </span>
+                </a>
+                <ul class="treeview-menu">
+                    <li<c:if test="${requestScope.stype eq ApplyRecordStatistics.TYPE_BANK}"> class="active"</c:if>><a href="<%=request.getContextPath()%>/statistics/bank"><i class="fa fa-circle-o"></i> 网点</a></li>
+                    <li<c:if test="${requestScope.stype eq ApplyRecordStatistics.TYPE_REFEREE}"> class="active"</c:if>><a href="<%=request.getContextPath()%>/statistics/referee"><i class="fa fa-circle-o"></i> 推荐手机号码</a></li>
+                </ul>
+            </li>
 
             <% } else if (AuthorityUtils.hasAuthority(userDetails, "ROLE_BRANCH_MARKETER")) { %>
             <li<% if (uri.equals("recordlist") || uri.equals("recordview")) { %> class="active"<% } %>><a href="<%=request.getContextPath()%>/record/table"><i class="fa fa-link"></i> <span>申请记录</span></a></li>

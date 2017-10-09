@@ -27,6 +27,32 @@ $(function () {
         }
     };
 
+
+    $.extend({
+        standardPost:function(url, args){
+            var body = $(document.body),
+                form = $("<form method='post'></form>"),
+                input;
+            form.attr({"action":url});
+
+            var q = decodeURIComponent($.param(args));
+            var argArray = q.split("&");
+            $.each(argArray, function(index, value){
+                var comps = value.split("=");
+                if (comps.length == 2) {
+                    input = $("<input type='hidden'>");
+                    input.attr({"name": comps[0]});
+                    input.val(comps[1]);
+                    form.append(input);
+                }
+            });
+
+            form.appendTo(document.body);
+            form.submit();
+            document.body.removeChild(form[0]);
+        }
+    });
+
     $('#reset-pwd-btn').on('click', function () {
         $('#reset-pwd-modal .alert-success').hide();
         $('#reset-pwd-modal .alert-success').hide();

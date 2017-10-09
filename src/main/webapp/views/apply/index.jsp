@@ -79,7 +79,7 @@
                     <p>
                         1. 额度高，最高<span class="highlight">50万</span><br/>
                         2. 年费低，满足条件可减免<br/>
-                        3. 权益多，<span class="highlight">不限次24小时道路救援等</span><br/>
+                        3. 权益多，不限次24小时道路救援等<br/>
                         4. 资费低，免挂失费、换卡费等<br/>
                         5. 尊享VIP，网点办理业务享受贵宾通道
                     </p>
@@ -93,7 +93,7 @@
                     <div class="underline"></div>
                     <p>
                         1. 额度高，最高<span class="highlight">80万</span><br/>
-                        2. 权益多，<span class="highlight">道路救援、机场高铁服务、专家号预约等多项服务</span><br/>
+                        2. 权益多，道路救援、机场高铁服务、专家号预约等多项服务<br/>
                         3. 资费低，免挂失费、换卡费等<br/>
                         4. 尊享银联&万事达白金服务礼遇<br/>
                         5. 尊享网点VIP服务
@@ -110,7 +110,7 @@
                         1. 分期费率低，<span class="highlight">0.54%</span>每期<br/>
                         2. 手续费减免<br/>
                         3. 分期档次多<br/>
-                        4. <span class="highlight">双倍积分</span>
+                        4. 双倍积分
                     </p>
                 </div>
             </div>
@@ -121,7 +121,7 @@
                     <h4>慈善公益卡金卡</h4>
                     <div class="underline"></div>
                     <p>
-                        1. <span class="highlight">您消费，我捐款</span><br/>
+                        1. 您消费，我捐款<br/>
                         2. 积分永久有效<br/>
                         3. 尊享网点<span class="highlight">VIP</span>服务<br/>
                         4. 南京南站高铁<span class="highlight">VIP</span>休息室服务
@@ -135,9 +135,9 @@
                     <h4>生肖信用卡</h4>
                     <div class="underline"></div>
                     <p>
-                        1. <span class="highlight">收藏价值高</span><br/>
+                        1. 收藏价值高<br/>
                         2. 尊享<span class="highlight">VIP</span>服务<br/>
-                        3. 免费交易提醒<br/>
+                        3. <span class="highlight">免费</span>交易提醒<br/>
                         4. 生日双倍积分
                     </p>
                 </div>
@@ -167,7 +167,10 @@
 <script>
     $(function () {
         $('.carousel').carousel();
-        $('a[type="button"]').attr('href', "form?t=" + new Date().getTime());
+        $('a[type="button"]').on('click', function() {
+            var name = $('.carousel .item.active h4').text();
+            window.location = "form?" + $.param({t: new Date().getTime(), cn: name});
+        });
     });
 </script>
 

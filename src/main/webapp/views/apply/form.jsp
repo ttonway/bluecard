@@ -102,30 +102,30 @@
             </select>
         </div>
 
-        <div class="form-group">
-            <label for="orgId">推荐机构（如有，请选择）</label>
-            <select class="form-control" id="org-all" style="display: none;">
-                <c:forEach items="${orgMapList}" var="item">
-                    <optgroup label="${item.key}">
-                        <c:forEach items="${item.value}" var="org">
-                            <option value="${org.orgId}">${org.orgName}</option>
-                        </c:forEach>
-                    </optgroup>
-                </c:forEach>
-            </select>
-            <select class="form-control" id="org-area">
-                <option value="" selected disabled>请选择地区</option>
-                <c:forEach items="${orgMapList}" var="item">
-                    <option>${item.key}</option>
-                </c:forEach>
-            </select>
-            <div style="margin-top: 8px;"></div>
-            <select class="form-control" id="orgId" name="orgId">
-            </select>
-        </div>
+        <%--<div class="form-group">--%>
+            <%--<label for="orgId">推荐机构（如有，请选择）</label>--%>
+            <%--<select class="form-control" id="org-all" style="display: none;">--%>
+                <%--<c:forEach items="${orgMapList}" var="item">--%>
+                    <%--<optgroup label="${item.key}">--%>
+                        <%--<c:forEach items="${item.value}" var="org">--%>
+                            <%--<option value="${org.orgId}">${org.orgName}</option>--%>
+                        <%--</c:forEach>--%>
+                    <%--</optgroup>--%>
+                <%--</c:forEach>--%>
+            <%--</select>--%>
+            <%--<select class="form-control" id="org-area">--%>
+                <%--<option value="" selected disabled>请选择地区</option>--%>
+                <%--<c:forEach items="${orgMapList}" var="item">--%>
+                    <%--<option>${item.key}</option>--%>
+                <%--</c:forEach>--%>
+            <%--</select>--%>
+            <%--<div style="margin-top: 8px;"></div>--%>
+            <%--<select class="form-control" id="orgId" name="orgId">--%>
+            <%--</select>--%>
+        <%--</div>--%>
 
         <div class="form-group">
-            <label for="referee-phone">推荐人手机号</label>
+            <label for="referee-phone">推荐人手机号码（如有，请正确填写）</label>
             <input type="text" class="form-control" id="referee-phone" name="referee-phone">
         </div>
 

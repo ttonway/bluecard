@@ -3,7 +3,13 @@ package com.ttonway.bluecard.pojo;
 /**
  * Created by ttonway on 2017/6/29.
  */
-public class BankStatistics extends Bank {
+public class ApplyRecordStatistics {
+    public static final String TYPE_BANK = "bank";
+    public static final String TYPE_REFEREE = "referee";
+
+    private Long id;
+    private String name;
+
     public long initCount;
     public long qualifiedCount;
     public long unqualifiedCount;
@@ -66,5 +72,21 @@ public class BankStatistics extends Bank {
 
     public void setFailCount(long failCount) {
         this.failCount = failCount;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 }

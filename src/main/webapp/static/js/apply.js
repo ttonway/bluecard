@@ -119,6 +119,13 @@ $(function () {
 
 }());
 
+function getUrlParam(name) {
+    var reg = new RegExp("(^|&)"+ name +"=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+    if (r != null)
+        return decodeURIComponent(r[2]);
+    return null; //返回参数值
+}
 
 function submitForm() {
     var data = {
@@ -128,7 +135,9 @@ function submitForm() {
         fund: $('.input-single-select li.on[name="accumulation_fund"]').text(),
         orgId: $('select[name="orgId"]').val(),
         bankId: $('select[name="bankId"]').val(),
-        refereePhone: $('input[name="referee-phone"]').val()
+        refereePhone: $('input[name="referee-phone"]').val(),
+
+        cardName: getUrlParam("cn")
 
         // income: parseInt($('input[name="income"]').val())
     };

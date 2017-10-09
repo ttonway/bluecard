@@ -50,42 +50,56 @@
                                 <%--<dd>${record.income}</dd>--%>
                                 <%--<dt>申请额度（万）</dt>--%>
                                 <%--<dd>${record.creditLine / 10000}</dd>--%>
+                                <dt>市县</dt>
+                                <dd>${record.bank.area}</dd>
                                 <dt>经办支行</dt>
-                                <dd>${record.bank.area} - ${record.bank.bankName}</dd>
+                                <dd>${record.bank.bankName}</dd>
+                                <dt>申请卡种</dt>
+                                <dd>${record.cardName}</dd>
                                 <dt>申请时间</dt>
                                 <dd>${record.createTime}</dd>
                                 <dt>当前状态</dt>
                                 <dd><strong>${record.statusName}</strong></dd>
+                                <c:if test="${record.status == 'UNQUALIFIED'}">
+                                    <dt>备注</dt>
+                                    <dd><strong>${record.remark}</strong></dd>
+                                </c:if>
                             </dl>
                         </div>
                         <!-- /.box-body -->
 
                         <c:if test="${admin.role == 'ROLE_ADMIN' || (admin.role == 'ROLE_BRANCH_MARKETER' && admin.bank == record.bank)}">
-                            <form action="<%=request.getContextPath()%>/record/update" method="post">
-                                <input type="hidden" name="recordId" value="${record.recordId}">
-                                <input type="hidden" name="status">
+                            <div class="box-footer">
+                                <form action="<%=request.getContextPath()%>/record/update" method="post"
+                                      class="form-inline">
+                                    <input type="hidden" name="recordId" value="${record.recordId}">
+                                    <input type="hidden" name="status">
 
-                                <div class="box-footer">
                                     <c:if test="${record.status == 'INIT'}">
-                                        <button type="button" class="btn btn-success" data-status="QUALIFIED">符合
-                                        </button>
-                                        <button type="button" class="btn btn-warning" data-status="UNQUALIFIED">不符合
-                                        </button>
-                                    </c:if>
-                                    <c:if test="${record.status == 'QUALIFIED'}">
                                         <button type="button" class="btn btn-success" data-status="CONTACTED">已联系
                                         </button>
                                         <button type="button" class="btn btn-warning" data-status="UNCONTACTED">未联系
                                         </button>
                                     </c:if>
                                     <c:if test="${record.status == 'CONTACTED'}">
+                                        <button type="button" class="btn btn-success" data-status="QUALIFIED">符合
+                                        </button>
+                                        <button type="button" class="btn btn-warning" data-status="UNQUALIFIED">不符合
+                                        </button>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="remark">备注</label>
+                                            <input type="text" class="form-control" name="remark" id="remark"
+                                                   placeholder="不符合请注明原因">
+                                        </div>
+                                    </c:if>
+                                    <c:if test="${record.status == 'QUALIFIED'}">
                                         <button type="button" class="btn btn-success" data-status="APPLY_SUCCESS">申请成功
                                         </button>
                                         <button type="button" class="btn btn-warning" data-status="APPLY_FAIL">申请失败
                                         </button>
                                     </c:if>
-                                </div>
-                            </form>
+                                </form>
+                            </div>
                         </c:if>
                     </div>
                     <!-- /.box -->

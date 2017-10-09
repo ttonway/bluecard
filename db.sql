@@ -79,6 +79,8 @@ CREATE TABLE `apply_record` (
   `bankId` bigint(20) NOT NULL,
   `status` varchar(50) DEFAULT NULL,
   `refereePhone` varchar(20) DEFAULT NULL,
+  `remark` varchar(255) DEFAULT NULL,
+  `cardName` varchar(255) DEFAULT NULL,
   `createTime` varchar(255) DEFAULT NULL,
   `updateTime` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)

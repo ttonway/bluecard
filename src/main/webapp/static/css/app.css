@@ -25,3 +25,12 @@ table {
 .view-details {
 	text-align: center;
 }
+tfoot input {
+	width: 100%;
+	padding: 3px;
+	box-sizing: border-box;
+}
+tfoot>tr>th {
+	border: 1px solid #f4f4f4;
+	background: #f4f4f4;
+}

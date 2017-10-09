@@ -24,6 +24,8 @@
         <result column="creditLine" property="creditLine" jdbcType="BIGINT"/>
         <result column="status" property="status" jdbcType="VARCHAR"/>
         <result column="refereePhone" property="refereePhone" jdbcType="VARCHAR"/>
+        <result column="remark" property="remark" jdbcType="VARCHAR"/>
+        <result column="cardName" property="cardName" jdbcType="VARCHAR"/>
         <result column="createTime" property="createTime" jdbcType="VARCHAR"/>
         <result column="updateTime" property="updateTime" jdbcType="VARCHAR"/>
         <association column="bankId" property="bank" javaType="com.ttonway.bluecard.pojo.Bank" resultMap="bankBean">
@@ -54,16 +56,46 @@
         <if test="status != null">
             and r.status = #{status,jdbcType=VARCHAR}
         </if>
+        <if test="minTime != null">
+            <![CDATA[and r.createtime >= #{minTime,jdbcType=VARCHAR}]]>
+        </if>
+        <if test="maxTime != null">
+            <![CDATA[and r.createtime < #{maxTime,jdbcType=VARCHAR}]]>
+        </if>
         <if test="keyword != null">
             and (r.name like CONCAT('%',#{keyword},'%') or r.phone like CONCAT('%',#{keyword},'%'))
         </if>
+        <if test="userName != null">
+            and r.name like CONCAT('%',#{userName},'%')
+        </if>
+        <if test="phoneNumber != null">
+            and r.phone like CONCAT('%',#{phoneNumber},'%')
+        </if>
+        <if test="profession != null">
+            and r.profession like CONCAT('%',#{profession},'%')
+        </if>
+        <if test="accumulationFund != null">
+            and r.accumulation_fund like CONCAT('%',#{accumulationFund},'%')
+        </if>
+        <if test="refereePhone != null">
+            and r.refereePhone like CONCAT('%',#{refereePhone},'%')
+        </if>
+        <if test="bankarea != null">
+            and b.area like CONCAT('%',#{bankarea},'%')
+        </if>
+        <if test="bankbankName != null">
+            and b.bank  like CONCAT('%',#{bankbankName},'%')
+        </if>
         order by r.createTime desc
+        <if test="start != null and length != null">
         limit #{start,jdbcType=BIGINT},#{length,jdbcType=BIGINT}
+        </if>
     </select>
 
     <select id="queryRecordListCount" resultType="java.lang.Integer" parameterType="java.util.HashMap">
         select count(r.id) cnt
         from apply_record r
+        left join sys_bank b on r.bankId = b.id
         where 1=1
         <if test="bankId != null">
             and r.bankId = #{bankId,jdbcType=BIGINT}
@@ -71,8 +103,35 @@
         <if test="status != null">
             and r.status = #{status,jdbcType=VARCHAR}
         </if>
+        <if test="minTime != null">
+            <![CDATA[and r.createtime >= #{minTime,jdbcType=VARCHAR}]]>
+        </if>
+        <if test="maxTime != null">
+            <![CDATA[and r.createtime < #{maxTime,jdbcType=VARCHAR}]]>
+        </if>
         <if test="keyword != null">
             and (r.name like CONCAT('%',#{keyword},'%') or r.phone like CONCAT('%',#{keyword},'%'))
+        </if>
+        <if test="userName != null">
+            and r.name like CONCAT('%',#{userName},'%')
+        </if>
+        <if test="phoneNumber != null">
+            and r.phone like CONCAT('%',#{phoneNumber},'%')
+        </if>
+        <if test="profession != null">
+            and r.profession like CONCAT('%',#{profession},'%')
+        </if>
+        <if test="accumulationFund != null">
+            and r.accumulation_fund like CONCAT('%',#{accumulationFund},'%')
+        </if>
+        <if test="refereePhone != null">
+            and r.refereePhone like CONCAT('%',#{refereePhone},'%')
+        </if>
+        <if test="bankarea != null">
+            and b.area like CONCAT('%',#{bankarea},'%')
+        </if>
+        <if test="bankbankName != null">
+            and b.bank  like CONCAT('%',#{bankbankName},'%')
         </if>
     </select>
 
@@ -86,27 +145,64 @@
         group by status
     </select>
 
-    <select id="queryRecordBankStatusCount" resultType="java.util.HashMap">
+    <select id="queryRecordBankStatusCount" resultType="java.util.HashMap" parameterType="java.util.HashMap">
         select r.bankId, r.status, count(r.id) cnt
         from apply_record r
+        where 1=1
+        <if test="minTime != null">
+            <![CDATA[and r.createtime >= #{minTime,jdbcType=VARCHAR}]]>
+        </if>
+        <if test="maxTime != null">
+            <![CDATA[and r.createtime < #{maxTime,jdbcType=VARCHAR}]]>
+        </if>
         group by bankId, status
+    </select>
+
+    <select id="queryRecordRefereeStatusCount" resultType="java.util.HashMap" parameterType="java.util.HashMap">
+        select r.refereePhone, r.status, count(r.id) cnt
+        from apply_record r
+        where 1=1
+        <if test="minTime != null">
+            <![CDATA[and r.createtime >= #{minTime,jdbcType=VARCHAR}]]>
+        </if>
+        <if test="maxTime != null">
+            <![CDATA[and r.createtime < #{maxTime,jdbcType=VARCHAR}]]>
+        </if>
+        group by refereePhone, status
     </select>
 
     <insert id="insertRecord" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
         insert into apply_record
-        (`name`, phone, profession, accumulation_fund, organizationId, bankId, status, createTime, updateTime, income, creditLine, refereePhone)
-        values
-        (#{userName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{accumulationFund,jdbcType=VARCHAR},
-         #{organization.orgId,jdbcType=BIGINT}, #{bank.bankId,jdbcType=BIGINT},
+        (`name`, phone, profession, accumulation_fund, organizationId, bankId, status, createTime, updateTime,
+        income, creditLine, refereePhone, cardName)
+        select
+        #{userName,jdbcType=VARCHAR}, #{phoneNumber,jdbcType=VARCHAR}, #{profession,jdbcType=VARCHAR}, #{accumulationFund,jdbcType=VARCHAR},
+        #{organization.orgId,jdbcType=BIGINT}, #{bank.bankId,jdbcType=BIGINT},
         #{status,jdbcType=VARCHAR}, #{createTime,jdbcType=VARCHAR}, #{updateTime,jdbcType=VARCHAR},
-        #{income,jdbcType=BIGINT}, #{creditLine,jdbcType=BIGINT}, #{refereePhone,jdbcType=BIGINT})
+        #{income,jdbcType=BIGINT}, #{creditLine,jdbcType=BIGINT}, #{refereePhone,jdbcType=VARCHAR}, #{cardName,jdbcType=VARCHAR}
+        from dual
+        where NOT EXISTS (
+          SELECT id
+          FROM apply_record r
+          WHERE `name` = #{userName,jdbcType=VARCHAR} AND
+                phone = #{phoneNumber,jdbcType=VARCHAR} AND
+                profession = #{profession,jdbcType=VARCHAR} AND
+                accumulation_fund = #{accumulationFund,jdbcType=VARCHAR} AND
+                organizationId = #{organization.orgId,jdbcType=BIGINT} AND
+                bankId = #{bank.bankId,jdbcType=BIGINT} AND
+                status = #{status,jdbcType=VARCHAR} AND
+                income = #{income,jdbcType=BIGINT} AND
+                creditLine = #{creditLine,jdbcType=BIGINT} AND
+                refereePhone = #{refereePhone,jdbcType=VARCHAR} AND
+                cardName = #{cardName,jdbcType=VARCHAR});
     </insert>
 
 
     <update id="updateStatus" parameterType="com.ttonway.bluecard.pojo.ApplyRecord">
         update apply_record
         set status = #{status,jdbcType=VARCHAR},
-        updateTime = #{updateTime,jdbcType=VARCHAR}
+            remark = #{remark,jdbcType=VARCHAR},
+            updateTime = #{updateTime,jdbcType=VARCHAR}
         where id = #{recordId,jdbcType=BIGINT}
     </update>
 

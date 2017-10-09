@@ -11,6 +11,11 @@
 <html>
 <head>
     <jsp:include page="include-head.jsp"/>
+    <style>
+        .dataTables_filter {
+            display: none;
+        }
+    </style>
 </head>
 
 <body class="hold-transition skin-green sidebar-mini">
@@ -34,20 +39,22 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <a href="#" class="category active"
-                               status="<%=ApplyRecord.STATUS_INIT%>">未处理<span>(0)</span></a>
-                            <a href="#" class="category"
-                               status="<%=ApplyRecord.STATUS_QUALIFIED%>">符合<span>(0)</span></a>
-                            <a href="#" class="category"
-                               status="<%=ApplyRecord.STATUS_UNQUALIFIED%>">不符合<span>(0)</span></a>
-                            <a href="#" class="category"
-                               status="<%=ApplyRecord.STATUS_UNCONTACTED%>">未联系<span>(0)</span></a>
+                            <a href="#" class="category active" status="<%=ApplyRecord.STATUS_INIT%>">未处理<span>(0)</span></a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_UNCONTACTED%>">未联系<span>(0)</span></a>
                             <a href="#" class="category" status="<%=ApplyRecord.STATUS_CONTACTED%>">已联系<span>(0)</span></a>
-                            <a href="#" class="category"
-                               status="<%=ApplyRecord.STATUS_APPLY_SUCCESS%>">申请成功<span>(0)</span></a>
-                            <a href="#" class="category"
-                               status="<%=ApplyRecord.STATUS_APPLY_FAIL%>">申请失败<span>(0)</span></a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_QUALIFIED%>">符合<span>(0)</span></a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_UNQUALIFIED%>">不符合<span>(0)</span></a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_APPLY_SUCCESS%>">申请成功<span>(0)</span></a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_APPLY_FAIL%>">申请失败<span>(0)</span></a>
 
+                            <div class="box-tools">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <button type="button" class="btn btn-default pull-right" id="daterange-btn">
+                                        <span><i class="fa fa-calendar"></i> 所有</span>
+                                        <i class="fa fa-caret-down"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <!-- /.box-header -->
                         <div class="box-body">
@@ -59,11 +66,25 @@
                                     <th>联系方式</th>
                                     <th>行业信息</th>
                                     <th>是否有公积金或社保</th>
-                                    <th>推荐机构</th>
+                                    <th>推荐人手机号码</th>
+                                    <th>市县</th>
                                     <th>经办支行</th>
                                     <th>申请时间</th>
                                 </tr>
                                 </thead>
+                                <tfoot>
+                                <tr>
+                                    <th/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th><input type="text"/></th>
+                                    <th></th>
+                                </tr>
+                                </tfoot>
                                 <tbody>
                                 </tbody>
                             </table>
@@ -71,6 +92,7 @@
                         <!-- /.box-body -->
 
                         <div class="box-footer clearfix">
+                            <a href="#" class="btn btn-default pull-left" id="export">下载</a>
                             <a href="#" class="btn btn-default pull-left" id="showDelete">删除</a>
                         </div>
                     </div>

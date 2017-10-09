@@ -42,6 +42,8 @@ public class ApplyRecord {
     private Integer income;
     private Integer creditLine;
     private String refereePhone;
+    private String remark;
+    private String cardName;
 
     private String createTime;
     private String updateTime;
@@ -153,5 +155,21 @@ public class ApplyRecord {
 
     public void setRefereePhone(String refereePhone) {
         this.refereePhone = refereePhone;
+    }
+
+    public String getRemark() {
+        return remark;
+    }
+
+    public void setRemark(String remark) {
+        this.remark = remark;
+    }
+
+    public String getCardName() {
+        return cardName;
+    }
+
+    public void setCardName(String cardName) {
+        this.cardName = cardName;
     }
 }

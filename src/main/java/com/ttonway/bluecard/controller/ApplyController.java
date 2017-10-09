@@ -64,7 +64,8 @@ public class ApplyController {
 
     @RequestMapping("/submit")
     @ResponseBody
-    public Map<String, Object> submit(String name, String phone, String profession, String fund, Long orgId, Long bankId, String refereePhone) {
+    public Map<String, Object> submit(String name, String phone, String profession, String fund, Long orgId, Long bankId,
+                                      String refereePhone, String cardName) {
 
         ApplyRecord record = new ApplyRecord();
         record.setUserName(name);
@@ -72,6 +73,7 @@ public class ApplyController {
         record.setProfession(profession);
         record.setAccumulationFund(fund);
         record.setRefereePhone(refereePhone);
+        record.setCardName(cardName);
 
         record.setIncome(-1);
         record.setCreditLine(-1);
