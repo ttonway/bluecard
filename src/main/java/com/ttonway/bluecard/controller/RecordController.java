@@ -55,7 +55,9 @@ public class RecordController {
         if (AdminUser.ROLE_BRANCH_MARKETER.equals(role) || AdminUser.ROLE_BACK_MANAGER.equals(role)) {
             pmap.put("bankId", adminUser.getBank().getBankId());
         }
-        pmap.put("status", status);
+        if (!StringUtils.isEmpty(status)) {
+            pmap.put("status", status);
+        }
         if (!StringUtils.isEmpty(searchValue)) {
             pmap.put("keyword", searchValue);
         }

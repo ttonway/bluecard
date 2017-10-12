@@ -39,7 +39,8 @@
                 <div class="col-xs-12">
                     <div class="box">
                         <div class="box-header">
-                            <a href="#" class="category active" status="<%=ApplyRecord.STATUS_INIT%>">未处理<span>(0)</span></a>
+                            <a href="#" class="category active" status="">所有</a>
+                            <a href="#" class="category" status="<%=ApplyRecord.STATUS_INIT%>">未处理<span>(0)</span></a>
                             <a href="#" class="category" status="<%=ApplyRecord.STATUS_UNCONTACTED%>">未联系<span>(0)</span></a>
                             <a href="#" class="category" status="<%=ApplyRecord.STATUS_CONTACTED%>">已联系<span>(0)</span></a>
                             <a href="#" class="category" status="<%=ApplyRecord.STATUS_QUALIFIED%>">符合<span>(0)</span></a>

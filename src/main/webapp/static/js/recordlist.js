@@ -106,7 +106,7 @@ $(function () {
                 firstDay: 1
             },
             ranges: {
-                '所有': [moment(), moment()],
+                '所有': [moment.invalid(), moment.invalid()],
                 '过去7天': [moment().subtract(6, 'days'), moment()],
                 '过去30天': [moment().subtract(29, 'days'), moment()],
                 '本月': [moment().startOf('month'), moment().endOf('month')]
@@ -115,14 +115,14 @@ $(function () {
             endDate: moment()
         },
         function (start, end) {
-            if (start.isSame(end, 'day')) {
-                $('#daterange-btn').attr('min-time', '');
-                $('#daterange-btn').attr('max-time', '');
-                $('#daterange-btn span').html('<i class="fa fa-calendar"></i> 所有');
-            } else {
+            if (start.isValid && end.isValid()) {
                 $('#daterange-btn').attr('min-time', start.format("YYYY-MM-DD HH:mm:ss"));
                 $('#daterange-btn').attr('max-time', end.format("YYYY-MM-DD HH:mm:ss"));
                 $('#daterange-btn span').html(start.format('YYYY-MM-DD') + ' - ' + end.format('YYYY-MM-DD'));
+            } else {
+                $('#daterange-btn').attr('min-time', '');
+                $('#daterange-btn').attr('max-time', '');
+                $('#daterange-btn span').html('<i class="fa fa-calendar"></i> 所有');
             }
 
             reloadTable();
