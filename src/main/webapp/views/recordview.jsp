@@ -60,7 +60,7 @@
                                 <dd>${record.createTime}</dd>
                                 <dt>当前状态</dt>
                                 <dd><strong>${record.statusName}</strong></dd>
-                                <c:if test="${record.status == 'UNQUALIFIED'}">
+                                <c:if test="${not empty record.remark}">
                                     <dt>备注</dt>
                                     <dd><strong>${record.remark}</strong></dd>
                                 </c:if>
@@ -74,6 +74,7 @@
                                       class="form-inline">
                                     <input type="hidden" name="recordId" value="${record.recordId}">
                                     <input type="hidden" name="status">
+                                    <input type="hidden" name="remark">
 
                                     <c:if test="${record.status == 'INIT'}">
                                         <button type="button" class="btn btn-success" data-status="CONTACTED">已联系
@@ -88,8 +89,18 @@
                                         </button>
                                         <div class="form-group">
                                             <label class="sr-only" for="remark">备注</label>
-                                            <input type="text" class="form-control" name="remark" id="remark"
-                                                   placeholder="不符合请注明原因">
+                                            <select name="remark-select" class="form-control" id="remark">
+                                                <option value="" selected disabled>请选择原因</option>
+                                                <option>禁推人群</option>
+                                                <option>测试人群</option>
+                                                <option>外省工作</option>
+                                                <option value="other">其他原因</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" style="display: none;">
+                                            <label class="sr-only" for="remark-other">其他原因</label>
+                                            <input name="remark-input" type="text" class="form-control" id="remark-other"
+                                                   placeholder="请输入">
                                         </div>
                                     </c:if>
                                     <c:if test="${record.status == 'QUALIFIED'}">
@@ -97,6 +108,20 @@
                                         </button>
                                         <button type="button" class="btn btn-warning" data-status="APPLY_FAIL">申请失败
                                         </button>
+                                        <div class="form-group">
+                                            <label class="sr-only" for="remark2">备注</label>
+                                            <select name="remark-select" class="form-control" id="remark2">
+                                                <option value="" selected disabled>请选择原因</option>
+                                                <option>客户不愿意办</option>
+                                                <option>客户资质不符</option>
+                                                <option value="other">其他原因</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group" style="display: none;">
+                                            <label class="sr-only" for="remark-other2">其他原因</label>
+                                            <input name="remark-input" type="text" class="form-control" id="remark-other2"
+                                                   placeholder="请输入">
+                                        </div>
                                     </c:if>
                                 </form>
                             </div>
@@ -118,9 +143,23 @@
 <jsp:include page="include-script.jsp"/>
 <script>
     $(function () {
+        $('select[name="remark-select"]').on('change', function () {
+            if ($(this).val() == 'other') {
+                $('input[name="remark-input"]').parent('.form-group').show();
+            } else {
+                $('input[name="remark-input"]').parent('.form-group').hide();
+            }
+        });
+
         $('form button').on('click', function () {
             var v = $(this).attr('data-status');
             $('input[name="status"]').val(v);
+
+            var s = $('select[name="remark-select"]').val();
+            if (s == 'other') {
+                s = $('input[name="remark-input"]').val();
+            }
+            $('input[name="remark"]').val(s);
             $('form').submit();
         });
     });

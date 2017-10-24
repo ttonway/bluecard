@@ -147,11 +147,15 @@ public class RecordController {
             return model;
         }
 
-        record.setRecordId(recordId);
-        record.setStatus(status);
-        if (ApplyRecord.STATUS_UNQUALIFIED.equals(status)) {
+        if (ApplyRecord.STATUS_UNQUALIFIED.equals(status) || ApplyRecord.STATUS_APPLY_FAIL.equals(status)) {
+            if (StringUtils.isEmpty(remark)) {
+                model.addObject("error", "请选择原因");
+                return model;
+            }
             record.setRemark(remark);
         }
+        record.setRecordId(recordId);
+        record.setStatus(status);
         record.setUpdateTime(Utils.currentTimeStr());
         applyRecordService.updateStatus(record);
 
@@ -235,7 +239,7 @@ public class RecordController {
         int index = 0;
         HSSFRow row = sheet.createRow(index++);
         String[] headers = new String[]{"姓名", "联系方式", "行业信息", "是否有公积金或社保", "推荐机构", "推荐人手机号", "市县",
-                "经办支行", "申请时间", "当前状态"};
+                "经办支行", "申请卡种", "申请时间", "当前状态", "备注"};
         for (int i = 0; i < headers.length; i++) {
             HSSFCell cell = row.createCell(i);
             cell.setCellStyle(style);
@@ -256,8 +260,10 @@ public class RecordController {
             createCell(row, i++, style2, record.getRefereePhone());
             createCell(row, i++, style2, record.getBank() == null ? "" : record.getBank().getArea());
             createCell(row, i++, style2, record.getBank() == null ? "" : record.getBank().getBankName());
+            createCell(row, i++, style2, record.getCardName());
             createCell(row, i++, style2, record.getCreateTime());
             createCell(row, i++, style2, record.getStatusName());
+            createCell(row, i++, style2, record.getRemark());
         }
 
         workbook.write(out);
