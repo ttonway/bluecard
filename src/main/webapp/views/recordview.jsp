@@ -79,8 +79,8 @@
                                     <c:if test="${record.status == 'INIT'}">
                                         <button type="button" class="btn btn-success" data-status="CONTACTED">已联系
                                         </button>
-                                        <button type="button" class="btn btn-warning" data-status="UNCONTACTED">未联系
-                                        </button>
+                                        <%--<button type="button" class="btn btn-warning" data-status="UNCONTACTED">未联系--%>
+                                        <%--</button>--%>
                                     </c:if>
                                     <c:if test="${record.status == 'CONTACTED'}">
                                         <button type="button" class="btn btn-success" data-status="QUALIFIED">符合
